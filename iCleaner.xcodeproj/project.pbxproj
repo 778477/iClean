@@ -14,7 +14,6 @@
 		F52FEA6B1EA8B1CF003B8083 /* CCXcodeDeviceDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F52FEA6A1EA8B1CF003B8083 /* CCXcodeDeviceDataManager.m */; };
 		F52FEA6E1EA8D073003B8083 /* CCDerivedDataFinderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F52FEA6D1EA8D073003B8083 /* CCDerivedDataFinderModel.m */; };
 		F5985D281EB09B2F00ACEF4E /* CCSettings.plist in Resources */ = {isa = PBXBuildFile; fileRef = F5985D271EB09B2F00ACEF4E /* CCSettings.plist */; };
-		F5985D2A1EB09D9F00ACEF4E /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = F5985D291EB09D9F00ACEF4E /* README.txt */; };
 		F5985D2D1EB0A22300ACEF4E /* CCStatusBarItemMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5985D2C1EB0A22300ACEF4E /* CCStatusBarItemMenuController.m */; };
 /* End PBXBuildFile section */
 
@@ -34,7 +33,6 @@
 		F52FEA6C1EA8D073003B8083 /* CCDerivedDataFinderModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCDerivedDataFinderModel.h; sourceTree = "<group>"; };
 		F52FEA6D1EA8D073003B8083 /* CCDerivedDataFinderModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCDerivedDataFinderModel.m; sourceTree = "<group>"; };
 		F5985D271EB09B2F00ACEF4E /* CCSettings.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = CCSettings.plist; sourceTree = "<group>"; };
-		F5985D291EB09D9F00ACEF4E /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
 		F5985D2B1EB0A22300ACEF4E /* CCStatusBarItemMenuController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCStatusBarItemMenuController.h; sourceTree = "<group>"; };
 		F5985D2C1EB0A22300ACEF4E /* CCStatusBarItemMenuController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCStatusBarItemMenuController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -53,7 +51,6 @@
 		F52FEA441EA89C0C003B8083 = {
 			isa = PBXGroup;
 			children = (
-				F5985D291EB09D9F00ACEF4E /* README.txt */,
 				F52FEA4F1EA89C0C003B8083 /* iCleaner */,
 				F52FEA4E1EA89C0C003B8083 /* Products */,
 			);
@@ -159,7 +156,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				F52FEA5A1EA89C0C003B8083 /* Assets.xcassets in Resources */,
-				F5985D2A1EB09D9F00ACEF4E /* README.txt in Resources */,
 				F5985D281EB09B2F00ACEF4E /* CCSettings.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -281,7 +277,7 @@
 				DEVELOPMENT_TEAM = ANPDEVTJN3;
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = /Users/guomiaoyou/Documents/Project/iCleaner/iCleaner/iCleanPrefixHeader.pch;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/iCleaner/iCleanPrefixHeader.pch";
 				INFOPLIST_FILE = iCleaner/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.778477.iCleaner;
@@ -299,7 +295,7 @@
 				DEVELOPMENT_TEAM = ANPDEVTJN3;
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = /Users/guomiaoyou/Documents/Project/iCleaner/iCleaner/iCleanPrefixHeader.pch;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/iCleaner/iCleanPrefixHeader.pch";
 				INFOPLIST_FILE = iCleaner/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.778477.iCleaner;
