@@ -1,0 +1,335 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F52FEA521EA89C0C003B8083 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F52FEA511EA89C0C003B8083 /* AppDelegate.m */; };
+		F52FEA551EA89C0C003B8083 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F52FEA541EA89C0C003B8083 /* main.m */; };
+		F52FEA5A1EA89C0C003B8083 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F52FEA591EA89C0C003B8083 /* Assets.xcassets */; };
+		F52FEA681EA8AA57003B8083 /* CCHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F52FEA671EA8AA57003B8083 /* CCHomeViewController.m */; };
+		F52FEA6B1EA8B1CF003B8083 /* CCXcodeDeviceDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F52FEA6A1EA8B1CF003B8083 /* CCXcodeDeviceDataManager.m */; };
+		F52FEA6E1EA8D073003B8083 /* CCDerivedDataFinderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F52FEA6D1EA8D073003B8083 /* CCDerivedDataFinderModel.m */; };
+		F5985D281EB09B2F00ACEF4E /* CCSettings.plist in Resources */ = {isa = PBXBuildFile; fileRef = F5985D271EB09B2F00ACEF4E /* CCSettings.plist */; };
+		F5985D2A1EB09D9F00ACEF4E /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = F5985D291EB09D9F00ACEF4E /* README.txt */; };
+		F5985D2D1EB0A22300ACEF4E /* CCStatusBarItemMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5985D2C1EB0A22300ACEF4E /* CCStatusBarItemMenuController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		F52FEA4D1EA89C0C003B8083 /* iCleaner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iCleaner.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F52FEA501EA89C0C003B8083 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		F52FEA511EA89C0C003B8083 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		F52FEA541EA89C0C003B8083 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		F52FEA591EA89C0C003B8083 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F52FEA5E1EA89C0C003B8083 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F52FEA641EA8A7E4003B8083 /* CCCommonDefines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCCommonDefines.h; sourceTree = "<group>"; };
+		F52FEA651EA8A853003B8083 /* iCleanPrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iCleanPrefixHeader.pch; sourceTree = "<group>"; };
+		F52FEA661EA8AA57003B8083 /* CCHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCHomeViewController.h; sourceTree = "<group>"; };
+		F52FEA671EA8AA57003B8083 /* CCHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCHomeViewController.m; sourceTree = "<group>"; };
+		F52FEA691EA8B1CF003B8083 /* CCXcodeDeviceDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCXcodeDeviceDataManager.h; sourceTree = "<group>"; };
+		F52FEA6A1EA8B1CF003B8083 /* CCXcodeDeviceDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCXcodeDeviceDataManager.m; sourceTree = "<group>"; };
+		F52FEA6C1EA8D073003B8083 /* CCDerivedDataFinderModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCDerivedDataFinderModel.h; sourceTree = "<group>"; };
+		F52FEA6D1EA8D073003B8083 /* CCDerivedDataFinderModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCDerivedDataFinderModel.m; sourceTree = "<group>"; };
+		F5985D271EB09B2F00ACEF4E /* CCSettings.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = CCSettings.plist; sourceTree = "<group>"; };
+		F5985D291EB09D9F00ACEF4E /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
+		F5985D2B1EB0A22300ACEF4E /* CCStatusBarItemMenuController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCStatusBarItemMenuController.h; sourceTree = "<group>"; };
+		F5985D2C1EB0A22300ACEF4E /* CCStatusBarItemMenuController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCStatusBarItemMenuController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F52FEA4A1EA89C0C003B8083 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F52FEA441EA89C0C003B8083 = {
+			isa = PBXGroup;
+			children = (
+				F5985D291EB09D9F00ACEF4E /* README.txt */,
+				F52FEA4F1EA89C0C003B8083 /* iCleaner */,
+				F52FEA4E1EA89C0C003B8083 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F52FEA4E1EA89C0C003B8083 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F52FEA4D1EA89C0C003B8083 /* iCleaner.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F52FEA4F1EA89C0C003B8083 /* iCleaner */ = {
+			isa = PBXGroup;
+			children = (
+				F52FEA501EA89C0C003B8083 /* AppDelegate.h */,
+				F52FEA511EA89C0C003B8083 /* AppDelegate.m */,
+				F5985D2B1EB0A22300ACEF4E /* CCStatusBarItemMenuController.h */,
+				F5985D2C1EB0A22300ACEF4E /* CCStatusBarItemMenuController.m */,
+				F52FEA661EA8AA57003B8083 /* CCHomeViewController.h */,
+				F52FEA671EA8AA57003B8083 /* CCHomeViewController.m */,
+				F52FEA6C1EA8D073003B8083 /* CCDerivedDataFinderModel.h */,
+				F52FEA6D1EA8D073003B8083 /* CCDerivedDataFinderModel.m */,
+				F52FEA691EA8B1CF003B8083 /* CCXcodeDeviceDataManager.h */,
+				F52FEA6A1EA8B1CF003B8083 /* CCXcodeDeviceDataManager.m */,
+				F52FEA591EA89C0C003B8083 /* Assets.xcassets */,
+				F52FEA5E1EA89C0C003B8083 /* Info.plist */,
+				F52FEA641EA8A7E4003B8083 /* CCCommonDefines.h */,
+				F52FEA531EA89C0C003B8083 /* Supporting Files */,
+				F5985D271EB09B2F00ACEF4E /* CCSettings.plist */,
+			);
+			path = iCleaner;
+			sourceTree = "<group>";
+		};
+		F52FEA531EA89C0C003B8083 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F52FEA651EA8A853003B8083 /* iCleanPrefixHeader.pch */,
+				F52FEA541EA89C0C003B8083 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F52FEA4C1EA89C0C003B8083 /* iCleaner */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F52FEA611EA89C0C003B8083 /* Build configuration list for PBXNativeTarget "iCleaner" */;
+			buildPhases = (
+				F52FEA491EA89C0C003B8083 /* Sources */,
+				F52FEA4A1EA89C0C003B8083 /* Frameworks */,
+				F52FEA4B1EA89C0C003B8083 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = iCleaner;
+			productName = iCleaner;
+			productReference = F52FEA4D1EA89C0C003B8083 /* iCleaner.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F52FEA451EA89C0C003B8083 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = CC;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = miaoyou.gmy;
+				TargetAttributes = {
+					F52FEA4C1EA89C0C003B8083 = {
+						CreatedOnToolsVersion = 8.3;
+						DevelopmentTeam = ANPDEVTJN3;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = F52FEA481EA89C0C003B8083 /* Build configuration list for PBXProject "iCleaner" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F52FEA441EA89C0C003B8083;
+			productRefGroup = F52FEA4E1EA89C0C003B8083 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F52FEA4C1EA89C0C003B8083 /* iCleaner */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F52FEA4B1EA89C0C003B8083 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F52FEA5A1EA89C0C003B8083 /* Assets.xcassets in Resources */,
+				F5985D2A1EB09D9F00ACEF4E /* README.txt in Resources */,
+				F5985D281EB09B2F00ACEF4E /* CCSettings.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F52FEA491EA89C0C003B8083 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F52FEA681EA8AA57003B8083 /* CCHomeViewController.m in Sources */,
+				F52FEA6E1EA8D073003B8083 /* CCDerivedDataFinderModel.m in Sources */,
+				F52FEA551EA89C0C003B8083 /* main.m in Sources */,
+				F5985D2D1EB0A22300ACEF4E /* CCStatusBarItemMenuController.m in Sources */,
+				F52FEA6B1EA8B1CF003B8083 /* CCXcodeDeviceDataManager.m in Sources */,
+				F52FEA521EA89C0C003B8083 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		F52FEA5F1EA89C0C003B8083 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		F52FEA601EA89C0C003B8083 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		F52FEA621EA89C0C003B8083 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = ANPDEVTJN3;
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = /Users/guomiaoyou/Documents/Project/iCleaner/iCleaner/iCleanPrefixHeader.pch;
+				INFOPLIST_FILE = iCleaner/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.778477.iCleaner;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+			};
+			name = Debug;
+		};
+		F52FEA631EA89C0C003B8083 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = ANPDEVTJN3;
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = /Users/guomiaoyou/Documents/Project/iCleaner/iCleaner/iCleanPrefixHeader.pch;
+				INFOPLIST_FILE = iCleaner/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.778477.iCleaner;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F52FEA481EA89C0C003B8083 /* Build configuration list for PBXProject "iCleaner" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F52FEA5F1EA89C0C003B8083 /* Debug */,
+				F52FEA601EA89C0C003B8083 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F52FEA611EA89C0C003B8083 /* Build configuration list for PBXNativeTarget "iCleaner" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F52FEA621EA89C0C003B8083 /* Debug */,
+				F52FEA631EA89C0C003B8083 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F52FEA451EA89C0C003B8083 /* Project object */;
+}

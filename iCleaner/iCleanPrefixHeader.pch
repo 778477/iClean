@@ -1,0 +1,14 @@
+//
+//  iCleanPrefixHeader.pch
+//  iCleaner
+//
+//  Created by miaoyou.gmy on 2017/4/20.
+//  Copyright © 2017年 miaoyou.gmy. All rights reserved.
+//
+
+#ifndef iCleanPrefixHeader_pch
+#define iCleanPrefixHeader_pch
+
+#import "CCCommonDefines.h"
+
+#endif /* iCleanPrefixHeader_pch */
