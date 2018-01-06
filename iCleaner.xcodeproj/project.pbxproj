@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8DE9C32C20010ABE0094822F /* CCleanPaths.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8DE9C32B20010ABE0094822F /* CCleanPaths.plist */; };
 		F52FEA521EA89C0C003B8083 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F52FEA511EA89C0C003B8083 /* AppDelegate.m */; };
 		F52FEA551EA89C0C003B8083 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F52FEA541EA89C0C003B8083 /* main.m */; };
 		F52FEA5A1EA89C0C003B8083 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F52FEA591EA89C0C003B8083 /* Assets.xcassets */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8DE9C32B20010ABE0094822F /* CCleanPaths.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = CCleanPaths.plist; sourceTree = "<group>"; };
 		F52FEA4D1EA89C0C003B8083 /* iCleaner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iCleaner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F52FEA501EA89C0C003B8083 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F52FEA511EA89C0C003B8083 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -73,6 +75,7 @@
 				F5985D2C1EB0A22300ACEF4E /* CCStatusBarItemMenuController.m */,
 				F52FEA661EA8AA57003B8083 /* CCHomeViewController.h */,
 				F52FEA671EA8AA57003B8083 /* CCHomeViewController.m */,
+				8DE9C32B20010ABE0094822F /* CCleanPaths.plist */,
 				F52FEA6C1EA8D073003B8083 /* CCDerivedDataFinderModel.h */,
 				F52FEA6D1EA8D073003B8083 /* CCDerivedDataFinderModel.m */,
 				F52FEA691EA8B1CF003B8083 /* CCXcodeDeviceDataManager.h */,
@@ -155,6 +158,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8DE9C32C20010ABE0094822F /* CCleanPaths.plist in Resources */,
 				F52FEA5A1EA89C0C003B8083 /* Assets.xcassets in Resources */,
 				F5985D281EB09B2F00ACEF4E /* CCSettings.plist in Resources */,
 			);
