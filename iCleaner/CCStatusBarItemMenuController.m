@@ -7,9 +7,12 @@
 //
 
 #import "CCStatusBarItemMenuController.h"
+#import "CCHomeViewController.h"
 
 @interface CCStatusBarItemMenuController ()<NSMenuDelegate>
-
+@property (nonatomic) CCHomeViewController *homeVc;
+@property (nonatomic) NSWindow *settingWindow;
+@property (nonatomic) NSWindow *aboutWindow;
 @end
 
 @implementation CCStatusBarItemMenuController
@@ -38,13 +41,46 @@
     return _theMenu;
 }
 
+
 #pragma mark - MenuItem Action
 - (void)clickaboutItem{
     NSLog(@"about");
+    
+    if(!_aboutWindow){
+        _aboutWindow = [[NSWindow alloc] initWithContentRect:NSMakeRect(0, 0, 200, 100)
+                                                   styleMask:NSWindowStyleMaskClosable | NSWindowStyleMaskTitled
+                                                     backing:NSBackingStoreBuffered
+                                                       defer:YES];
+        [_aboutWindow center];
+        _aboutWindow.title = @"About";
+        _aboutWindow.releasedWhenClosed = NO;
+    }
+    
+    [_aboutWindow makeKeyAndOrderFront:nil];
 }
 
 - (void)clicksettingItem{
     NSLog(@"setting");
+    
+    if(!_settingWindow){
+        _settingWindow = [[NSWindow alloc] initWithContentRect:NSMakeRect(0, 0, iCleanMainWindowWidth, iCleanMainWindowHeight)
+                                                     styleMask:NSWindowStyleMaskClosable | NSWindowStyleMaskTitled
+                                                       backing:NSBackingStoreBuffered
+                                                         defer:YES];
+        
+        [_settingWindow center];
+        _settingWindow.title = @"Setting";
+        _settingWindow.releasedWhenClosed = NO;
+        
+        CCHomeViewController *home = [[CCHomeViewController alloc] init];
+        self.homeVc = home;
+        [_settingWindow.contentView addSubview:home.view];
+        
+    }
+    
+    
+    [_settingWindow makeKeyAndOrderFront:nil];
+    
 }
 
 - (void)clickexitItem{
