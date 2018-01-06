@@ -15,9 +15,6 @@
 @property (nonatomic) NSTableView *tableView;
 @property (nonatomic) NSProgressIndicator *indicator;
 @property (nonatomic) NSArray<CCDerivedDataFinderModel *> *data;
-@property (nonatomic) NSComboBox *combo;
-
-@property (nonatomic) NSArray *comboDatas;
 @end
 
 @implementation CCHomeViewController
@@ -25,7 +22,7 @@
 - (instancetype)init{
     self = [super init];
     if(self){
-        _comboDatas = @[@"A",@"B",@"C",@"D",@"E",@"F",@"G",@"H"];
+        
     }
     return self;
 }
@@ -39,7 +36,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.view addSubview:self.sweepBtn];
-    [self.view addSubview:self.combo];
     [self.view addSubview:self.indicator];
     [self.view addSubview:self.scrollView];
 }
@@ -53,17 +49,7 @@
     return _sweepBtn;
 }
 
-- (NSComboBox *)combo{
-    if(!_combo){
-        _combo = [[NSComboBox alloc] initWithFrame:NSMakeRect(20, iCleanMainWindowHeight - 100, 160, 20)];
-        _combo.editable = _combo.selectable = NO;
-        _combo.numberOfVisibleItems = 5;
-        _combo.itemHeight = 20.f;
-        _combo.usesDataSource = YES;
-        _combo.dataSource = self;
-    }
-    return _combo;
-}
+
 
 - (NSProgressIndicator *)indicator{
     if(!_indicator){
@@ -114,9 +100,10 @@
     if(!cell){
         cell = [NSTextField labelWithString:@""];
         cell.identifier = @"cellReuseId";
+        cell.selectable = cell.editable = NO;
     }
     
-    NSMutableAttributedString *str = [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"%@ \n%@",self.data[row].path.lastPathComponent,self.data[row].formatSize] attributes:@{NSForegroundColorAttributeName:[NSColor blackColor]}];
+    NSMutableAttributedString *str = [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"%@ \n%@ \n%@",self.data[row].path.lastPathComponent,self.data[row].formatSize,self.data[row].fileModificationDate]  attributes:@{NSForegroundColorAttributeName:[NSColor blackColor]}];
     
     cell.placeholderAttributedString = str;
     return cell;
@@ -136,15 +123,6 @@
 #pragma mark - NSTableViewDataSource
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView{
     return self.data.count;
-}
-
-#pragma mark - NSComboBoxDataSource
-- (NSInteger)numberOfItemsInComboBox:(NSComboBox *)comboBox{
-    return self.comboDatas.count;
-}
-
-- (nullable id)comboBox:(NSComboBox *)comboBox objectValueForItemAtIndex:(NSInteger)index{
-    return self.comboDatas[index];
 }
 
 
