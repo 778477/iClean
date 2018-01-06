@@ -57,8 +57,9 @@
     NSDictionary *dic = [[NSFileManager defaultManager] attributesOfFileSystemForPath:@"/" error:nil];
     
     NSMenuItem *item = [menu itemAtIndex:0];
-    NSUInteger size = [dic[NSFileSystemSize] longValue] / (1024*1024*1024);
-    NSUInteger freeSize = [dic[NSFileSystemFreeSize] longValue] / (1024*1024*1024);
-    item.title = [NSString stringWithFormat:@"剩余 %lu GB/%lu GB",freeSize,size];
+    // 计算存储容量， 进位换算使用 1000 而不是 1024
+    NSUInteger size = [dic[NSFileSystemSize] longValue] / (1000*1000*1000);
+    NSUInteger freeSize = [dic[NSFileSystemFreeSize] longValue] / (1000*1000*1000);
+    item.title = [NSString stringWithFormat:@"当前文件系统空间大小为 %luGB 可用空间大小为 %luGB",size, freeSize];
 }
 @end

@@ -23,7 +23,7 @@
         _fileSize = finderSize(path);
         _fileCreationDate = attributes[NSFileCreationDate];
         _fileModificationDate = attributes[NSFileModificationDate];
-        _contentSize = _fileSize*1.0 / ( 1024 * 1024 * 1024);
+        _contentSize = _fileSize*1.0 / ( 1000 * 1000 * 1000);
     }
     return self;
 }
@@ -35,7 +35,7 @@
     if(_contentSize > 1.0){
         f = [NSString stringWithFormat:@"%.2lf GB",_contentSize];
     } else {
-        f = [NSString stringWithFormat:@"%.2lf MB",_contentSize * 1024];
+        f = [NSString stringWithFormat:@"%.2lf MB",_contentSize * 1000];
     }
     
     return f;

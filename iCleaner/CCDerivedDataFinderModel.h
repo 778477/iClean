@@ -18,6 +18,7 @@
 @property (nonatomic, readonly) double contentSize;
 @property (nonatomic) NSString *formatSize;
 
-- (instancetype)initWithFilePath:(NSString *)path attribute:(NSDictionary<NSFileAttributeKey, id> *)attributes NS_DESIGNATED_INITIALIZER;
+- (instancetype)initWithFilePath:(NSString *)path
+                       attribute:(NSDictionary<NSFileAttributeKey, id> *)attributes NS_DESIGNATED_INITIALIZER;
 
 @end
