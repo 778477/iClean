@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8D616873218D9930009B92EE /* CCSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D616872218D9930009B92EE /* CCSetting.m */; };
+		8D616876218DA277009B92EE /* CCUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D616875218DA277009B92EE /* CCUtils.m */; };
+		8DE0DCDB217483270079AE4C /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 8DE0DCD9217483270079AE4C /* README.md */; };
+		8DE0DCDC217483270079AE4C /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 8DE0DCDA217483270079AE4C /* LICENSE */; };
 		8DE9C32C20010ABE0094822F /* CCleanPaths.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8DE9C32B20010ABE0094822F /* CCleanPaths.plist */; };
 		F52FEA521EA89C0C003B8083 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F52FEA511EA89C0C003B8083 /* AppDelegate.m */; };
 		F52FEA551EA89C0C003B8083 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F52FEA541EA89C0C003B8083 /* main.m */; };
@@ -19,6 +23,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8D616871218D9930009B92EE /* CCSetting.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCSetting.h; sourceTree = "<group>"; };
+		8D616872218D9930009B92EE /* CCSetting.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CCSetting.m; sourceTree = "<group>"; };
+		8D616874218DA277009B92EE /* CCUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCUtils.h; sourceTree = "<group>"; };
+		8D616875218DA277009B92EE /* CCUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CCUtils.m; sourceTree = "<group>"; };
+		8DE0DCD9217483270079AE4C /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		8DE0DCDA217483270079AE4C /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		8DE0DCDD217485B10079AE4C /* ReleaseNote.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = ReleaseNote.md; sourceTree = "<group>"; };
 		8DE9C32B20010ABE0094822F /* CCleanPaths.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = CCleanPaths.plist; sourceTree = "<group>"; };
 		F52FEA4D1EA89C0C003B8083 /* iCleaner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iCleaner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F52FEA501EA89C0C003B8083 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -53,6 +64,9 @@
 		F52FEA441EA89C0C003B8083 = {
 			isa = PBXGroup;
 			children = (
+				8DE0DCDA217483270079AE4C /* LICENSE */,
+				8DE0DCDD217485B10079AE4C /* ReleaseNote.md */,
+				8DE0DCD9217483270079AE4C /* README.md */,
 				F52FEA4F1EA89C0C003B8083 /* iCleaner */,
 				F52FEA4E1EA89C0C003B8083 /* Products */,
 			);
@@ -76,10 +90,14 @@
 				F52FEA661EA8AA57003B8083 /* CCHomeViewController.h */,
 				F52FEA671EA8AA57003B8083 /* CCHomeViewController.m */,
 				8DE9C32B20010ABE0094822F /* CCleanPaths.plist */,
+				8D616871218D9930009B92EE /* CCSetting.h */,
+				8D616872218D9930009B92EE /* CCSetting.m */,
 				F52FEA6C1EA8D073003B8083 /* CCDerivedDataFinderModel.h */,
 				F52FEA6D1EA8D073003B8083 /* CCDerivedDataFinderModel.m */,
 				F52FEA691EA8B1CF003B8083 /* CCXcodeDeviceDataManager.h */,
 				F52FEA6A1EA8B1CF003B8083 /* CCXcodeDeviceDataManager.m */,
+				8D616874218DA277009B92EE /* CCUtils.h */,
+				8D616875218DA277009B92EE /* CCUtils.m */,
 				F52FEA591EA89C0C003B8083 /* Assets.xcassets */,
 				F52FEA5E1EA89C0C003B8083 /* Info.plist */,
 				F52FEA641EA8A7E4003B8083 /* CCCommonDefines.h */,
@@ -125,12 +143,12 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = CC;
-				LastUpgradeCheck = 0830;
+				LastUpgradeCheck = 1000;
 				ORGANIZATIONNAME = miaoyou.gmy;
 				TargetAttributes = {
 					F52FEA4C1EA89C0C003B8083 = {
 						CreatedOnToolsVersion = 8.3;
-						DevelopmentTeam = D89DR34QUR;
+						DevelopmentTeam = 5W9JNEGWA4;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -160,7 +178,9 @@
 			files = (
 				8DE9C32C20010ABE0094822F /* CCleanPaths.plist in Resources */,
 				F52FEA5A1EA89C0C003B8083 /* Assets.xcassets in Resources */,
+				8DE0DCDB217483270079AE4C /* README.md in Resources */,
 				F5985D281EB09B2F00ACEF4E /* CCSettings.plist in Resources */,
+				8DE0DCDC217483270079AE4C /* LICENSE in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -174,8 +194,10 @@
 				F52FEA681EA8AA57003B8083 /* CCHomeViewController.m in Sources */,
 				F52FEA6E1EA8D073003B8083 /* CCDerivedDataFinderModel.m in Sources */,
 				F52FEA551EA89C0C003B8083 /* main.m in Sources */,
+				8D616876218DA277009B92EE /* CCUtils.m in Sources */,
 				F5985D2D1EB0A22300ACEF4E /* CCStatusBarItemMenuController.m in Sources */,
 				F52FEA6B1EA8B1CF003B8083 /* CCXcodeDeviceDataManager.m in Sources */,
+				8D616873218D9930009B92EE /* CCSetting.m in Sources */,
 				F52FEA521EA89C0C003B8083 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -193,15 +215,23 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -241,15 +271,23 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -278,7 +316,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = D89DR34QUR;
+				DEVELOPMENT_TEAM = 5W9JNEGWA4;
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/iCleaner/iCleanPrefixHeader.pch";
@@ -296,7 +334,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = D89DR34QUR;
+				DEVELOPMENT_TEAM = 5W9JNEGWA4;
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/iCleaner/iCleanPrefixHeader.pch";
