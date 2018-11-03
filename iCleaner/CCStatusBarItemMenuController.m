@@ -22,20 +22,20 @@
         _theMenu = [[NSMenu alloc] initWithTitle:@"iClean"];
         _theMenu.delegate = self;
         
-        NSArray<NSString *> *arr = @[@"first",@"about",@"setting",@"-",@"exit"];
+        NSArray<NSString *> *items = @[@"first",@"about",@"setting",@"-",@"exit"];
         
-        [arr enumerateObjectsUsingBlock:^(NSString * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-            if([obj isEqualToString:@"-"]){
+        for(NSString *title in items){
+            if([title isEqualToString:@"-"]){
                 [_theMenu addItem:[NSMenuItem separatorItem]];
             } else {
-                NSMenuItem *item = [[NSMenuItem alloc] initWithTitle:obj
-                                                              action:NSSelectorFromString([NSString stringWithFormat:@"click%@Item",obj])
+                SEL action = NSSelectorFromString([NSString stringWithFormat:@"click%@Item",title]);
+                NSMenuItem *item = [[NSMenuItem alloc] initWithTitle:title
+                                                              action:action
                                                        keyEquivalent:@""];
-                item.tag = idx;
                 [item setTarget:self];
                 [_theMenu addItem:item];
             }
-        }];
+        }
         
     }
     return _theMenu;
@@ -90,8 +90,8 @@
 
 #pragma mark - NSMenuDelegate
 - (void)menuWillOpen:(NSMenu *)menu{
-    NSDictionary *dic = [[NSFileManager defaultManager] attributesOfFileSystemForPath:@"/" error:nil];
-    
+    NSDictionary *dic = [[NSFileManager defaultManager] attributesOfFileSystemForPath:@"/"
+                                                                                error:nil];
     NSMenuItem *item = [menu itemAtIndex:0];
     // 计算存储容量， 进位换算使用 1000 而不是 1024
     NSUInteger size = [dic[NSFileSystemSize] longValue] / (1000*1000*1000);

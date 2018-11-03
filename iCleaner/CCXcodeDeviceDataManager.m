@@ -55,7 +55,6 @@ NSString *const kXcodeDerivedDataPath = @"/Developer/Xcode/DerivedData";
 }
 
 
-
 - (void)loadDerivedDataContents:(nonnull void (^)(NSArray<CCDerivedDataFinderModel *> *, NSError *))handle{
     if(!_isExist){
         NSError *err = [[NSError alloc] initWithDomain:@"loadDerivedDataContents"
@@ -69,7 +68,7 @@ NSString *const kXcodeDerivedDataPath = @"/Developer/Xcode/DerivedData";
         NSError *error;
         NSFileManager *fileManager = [NSFileManager new];
         NSMutableArray<CCDerivedDataFinderModel *> *finders = [NSMutableArray array];
-        NSArray<NSURL *> *urls = [fileManager contentsOfDirectoryAtURL:[NSURL URLWithString:_derivedDataPath]
+        NSArray<NSURL *> *urls = [fileManager contentsOfDirectoryAtURL:[NSURL URLWithString:self->_derivedDataPath]
                                             includingPropertiesForKeys:nil
                                                                options:0
                                                                  error:&error];

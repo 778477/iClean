@@ -8,20 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-static inline unsigned long long finderSize(NSString * _Nonnull finderPath){
-    unsigned long long int fileSize = 0;
-    @autoreleasepool {
-        NSArray *filesArray = [[NSFileManager defaultManager] subpathsOfDirectoryAtPath:finderPath error:nil];
-        NSEnumerator *filesEnumerator = [filesArray objectEnumerator];
-        NSString *fileName;
-        
-        while (fileName = [filesEnumerator nextObject]) {
-            NSDictionary *fileDictionary = [[NSFileManager defaultManager] attributesOfItemAtPath:[finderPath stringByAppendingPathComponent:fileName] error:nil];
-            fileSize += [fileDictionary fileSize];
-        }
-    }
-    return fileSize;
-}
 
 @class CCDerivedDataFinderModel;
 

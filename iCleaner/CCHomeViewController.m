@@ -9,7 +9,10 @@
 #import "CCHomeViewController.h"
 #import "CCXcodeDeviceDataManager.h"
 #import "CCDerivedDataFinderModel.h"
-@interface CCHomeViewController ()<NSTableViewDelegate,NSTableViewDataSource,NSComboBoxDataSource>
+@interface CCHomeViewController ()
+<NSTableViewDelegate,
+NSTableViewDataSource,
+NSComboBoxDataSource>
 @property (nonatomic) NSButton *sweepBtn;
 @property (nonatomic) NSScrollView *scrollView;
 @property (nonatomic) NSTableView *tableView;
