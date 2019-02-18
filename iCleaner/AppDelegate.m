@@ -20,9 +20,8 @@
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     
     NSStatusBar *bar = [NSStatusBar systemStatusBar];
-    _theItem = [bar statusItemWithLength:NSVariableStatusItemLength];
-    [_theItem setTitle: @"Clean"];
-    [_theItem setHighlightMode:YES];
+    _theItem = [bar statusItemWithLength:bar.thickness];
+    [_theItem setImage:[NSImage imageNamed:@"statusbar_icon"]];
     [_theItem setMenu:self.mc.theMenu];
 
 }

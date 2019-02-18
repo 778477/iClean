@@ -90,8 +90,7 @@
 
 #pragma mark - NSMenuDelegate
 - (void)menuWillOpen:(NSMenu *)menu{
-    NSDictionary *dic = [[NSFileManager defaultManager] attributesOfFileSystemForPath:@"/"
-                                                                                error:nil];
+    NSDictionary *dic = [[NSFileManager defaultManager] attributesOfFileSystemForPath:@"/" error:nil];
     NSMenuItem *item = [menu itemAtIndex:0];
     // 计算存储容量， 进位换算使用 1000 而不是 1024
     NSUInteger size = [dic[NSFileSystemSize] longValue] / (1000*1000*1000);
