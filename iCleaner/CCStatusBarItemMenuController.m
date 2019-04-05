@@ -8,6 +8,7 @@
 
 #import "CCStatusBarItemMenuController.h"
 #import "CCHomeViewController.h"
+#import "CCleanWroker.h"
 
 @interface CCStatusBarItemMenuController ()<NSMenuDelegate>
 @property (nonatomic) CCHomeViewController *homeVc;
@@ -22,14 +23,17 @@
         _theMenu = [[NSMenu alloc] initWithTitle:@"iClean"];
         _theMenu.delegate = self;
         
-        NSArray<NSString *> *items = @[@"first",@"about",@"setting",@"-",@"exit"];
+        NSArray<NSString *> *items = @[@"First",@"About",@"Clean",@"Setting",@"-",@"Exit"];
+        NSArray<NSString *> *titles = @[@"_",@"关于",@"开始清理",@"设置",@"_",@"退出"];
         
-        for(NSString *title in items){
-            if([title isEqualToString:@"-"]){
+        for(NSUInteger i = 0; i<items.count; ++i){
+            
+            NSString *item = items[i];
+            if([item isEqualToString:@"-"]){
                 [_theMenu addItem:[NSMenuItem separatorItem]];
             } else {
-                SEL action = NSSelectorFromString([NSString stringWithFormat:@"click%@Item",title]);
-                NSMenuItem *item = [[NSMenuItem alloc] initWithTitle:title
+                SEL action = NSSelectorFromString([NSString stringWithFormat:@"click%@Item",item]);
+                NSMenuItem *item = [[NSMenuItem alloc] initWithTitle:titles[i]
                                                               action:action
                                                        keyEquivalent:@""];
                 [item setTarget:self];
@@ -43,9 +47,7 @@
 
 
 #pragma mark - MenuItem Action
-- (void)clickaboutItem{
-    NSLog(@"about");
-    
+- (void)clickAboutItem{
     if(!_aboutWindow){
         _aboutWindow = [[NSWindow alloc] initWithContentRect:NSMakeRect(0, 0, 200, 100)
                                                    styleMask:NSWindowStyleMaskClosable | NSWindowStyleMaskTitled
@@ -59,9 +61,11 @@
     [_aboutWindow makeKeyAndOrderFront:nil];
 }
 
-- (void)clicksettingItem{
-    NSLog(@"setting");
-    
+- (void)clickCleanItem{
+    [[CCleanWroker defaultWorker] startClean];
+}
+
+- (void)clickSettingItem{
     if(!_settingWindow){
         _settingWindow = [[NSWindow alloc] initWithContentRect:NSMakeRect(0, 0, iCleanMainWindowWidth, iCleanMainWindowHeight)
                                                      styleMask:NSWindowStyleMaskClosable | NSWindowStyleMaskTitled
@@ -83,7 +87,7 @@
     
 }
 
-- (void)clickexitItem{
+- (void)clickExitItem{
     [[NSApplication sharedApplication].windows makeObjectsPerformSelector:@selector(close)];
     [[NSApplication sharedApplication] terminate:self];
 }

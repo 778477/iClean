@@ -11,7 +11,6 @@
 		8D616876218DA277009B92EE /* CCUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D616875218DA277009B92EE /* CCUtils.m */; };
 		8DC3681C22576F9600DA6877 /* CCleanWroker.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DC3681B22576F9600DA6877 /* CCleanWroker.m */; };
 		8DC368222257911300DA6877 /* CCleanWroker+CCUserNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DC368212257911300DA6877 /* CCleanWroker+CCUserNotification.m */; };
-		8DC36824225793E100DA6877 /* loading_icon.gif in Resources */ = {isa = PBXBuildFile; fileRef = 8DC36823225793E100DA6877 /* loading_icon.gif */; };
 		8DE0DCDB217483270079AE4C /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 8DE0DCD9217483270079AE4C /* README.md */; };
 		8DE0DCDC217483270079AE4C /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 8DE0DCDA217483270079AE4C /* LICENSE */; };
 		F52FEA521EA89C0C003B8083 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F52FEA511EA89C0C003B8083 /* AppDelegate.m */; };
@@ -34,7 +33,6 @@
 		8DC3681E225771F300DA6877 /* CCleanConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCleanConfig.h; sourceTree = "<group>"; };
 		8DC368202257911300DA6877 /* CCleanWroker+CCUserNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CCleanWroker+CCUserNotification.h"; sourceTree = "<group>"; };
 		8DC368212257911300DA6877 /* CCleanWroker+CCUserNotification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CCleanWroker+CCUserNotification.m"; sourceTree = "<group>"; };
-		8DC36823225793E100DA6877 /* loading_icon.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = loading_icon.gif; sourceTree = "<group>"; };
 		8DE0DCD9217483270079AE4C /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		8DE0DCDA217483270079AE4C /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		8DE0DCDD217485B10079AE4C /* ReleaseNote.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = ReleaseNote.md; sourceTree = "<group>"; };
@@ -118,7 +116,6 @@
 				8D616874218DA277009B92EE /* CCUtils.h */,
 				8D616875218DA277009B92EE /* CCUtils.m */,
 				F52FEA591EA89C0C003B8083 /* Assets.xcassets */,
-				8DC36823225793E100DA6877 /* loading_icon.gif */,
 				F52FEA5E1EA89C0C003B8083 /* Info.plist */,
 				F52FEA641EA8A7E4003B8083 /* CCCommonDefines.h */,
 				F52FEA531EA89C0C003B8083 /* Supporting Files */,
@@ -196,7 +193,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8DC36824225793E100DA6877 /* loading_icon.gif in Resources */,
 				F52FEA5A1EA89C0C003B8083 /* Assets.xcassets in Resources */,
 				8DE0DCDB217483270079AE4C /* README.md in Resources */,
 				F5985D281EB09B2F00ACEF4E /* CCSettings.plist in Resources */,

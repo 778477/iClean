@@ -16,13 +16,13 @@ const uint32_t kCleanWokerTimerTotal = 60 * kCleanWokerTimerOnce; // 1 hour
 
 @interface CCleanWroker()
 @property (nonatomic, strong) dispatch_queue_t queue;
-@property (nonatomic, strong) dispatch_source_t timer;
 @property (nonatomic, strong) id<CleanConfig> config;
 @property (nonatomic, strong) NSArray<CCDerivedDataFinderModel *> *needWeedoutDirs;
 @end
 
 @implementation CCleanWroker{
     uint32_t _timerInterval;
+    dispatch_source_t _timer;
 }
 
 + (instancetype)defaultWorker{
@@ -53,7 +53,7 @@ const uint32_t kCleanWokerTimerTotal = 60 * kCleanWokerTimerOnce; // 1 hour
     return _queue;
 }
 
-- (dispatch_source_t)timer{
+- (void)resumeTimer{
     if(!_timer){
         _timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, self.queue);
         
@@ -72,7 +72,11 @@ const uint32_t kCleanWokerTimerTotal = 60 * kCleanWokerTimerOnce; // 1 hour
             });
         }
     }
-    return _timer;
+    
+    
+    if(_timer){
+        dispatch_resume(_timer);
+    }
 }
 
 #pragma mark - public
@@ -81,7 +85,9 @@ const uint32_t kCleanWokerTimerTotal = 60 * kCleanWokerTimerOnce; // 1 hour
 }
 
 - (void)startClean{
-    dispatch_resume(self.timer);
+    if(!_timer){
+        [self resumeTimer];
+    }
     [self startCleanIfNeed];
 }
 
@@ -96,11 +102,8 @@ const uint32_t kCleanWokerTimerTotal = 60 * kCleanWokerTimerOnce; // 1 hour
         }
         
         
-        NSString *log = [NSString stringWithFormat:@"已扫描出目标文件夹大约有 %@ 大小待清理",[CCUtils dirFormatsize:cleanedConentSize]];
-        NSLog(@"%@", log);
-        
+        NSString *log = [NSString stringWithFormat:@"已清理大约 %@ 磁盘空间",[CCUtils dirFormatsize:cleanedConentSize]];
         NSUserNotification *notif = [[NSUserNotification alloc] init];
-        notif.identifier = kCCleanNotificationAction;
         notif.title = @"iCleaner";
         notif.informativeText = log;
         [[NSUserNotificationCenter defaultUserNotificationCenter] deliverNotification:notif];
@@ -119,12 +122,7 @@ const uint32_t kCleanWokerTimerTotal = 60 * kCleanWokerTimerOnce; // 1 hour
         return ;
     }
     
-    NSUserNotification *notif = [[NSUserNotification alloc] init];
-    notif.hasActionButton = NO;
-    notif.title = @"iCleaner";
-    notif.informativeText = @"开始检查目标缓存文件夹是否需要清理";
-    [[NSUserNotificationCenter defaultUserNotificationCenter] deliverNotification:notif];
-    
+
     // do the job
     dispatch_async(self.queue, ^{
         
@@ -147,7 +145,6 @@ const uint32_t kCleanWokerTimerTotal = 60 * kCleanWokerTimerOnce; // 1 hour
                 NSString *filePath = url.relativePath;
                 NSDictionary<NSFileAttributeKey, id> *itemAttribut = [fileManager attributesOfItemAtPath:filePath
                                                                                                    error:&attributErr];
-                NSLog(@"start scan %@",filePath);
                 CCDerivedDataFinderModel *model = [[CCDerivedDataFinderModel alloc] initWithFilePath:filePath
                                                                                            attribute:itemAttribut];
                 if([model isNeedWeedOut:self.config.cleanTimeInterval]){
@@ -160,19 +157,17 @@ const uint32_t kCleanWokerTimerTotal = 60 * kCleanWokerTimerOnce; // 1 hour
         
         // 小于10MB 忽略清理
         if(needWeedOutConentSize < 10 * 1000 * 1000){
-            NSLog(@"less than 10MB, Pass");
             return ;
         }
         
-        NSLog(@"greater than 10MB, need clean!");
+        
         self.needWeedoutDirs = finders.copy;
         if(!self.config.silencing){
             NSUserNotification *notif = [[NSUserNotification alloc] init];
             notif.identifier = kCCleanNotificationAction;
+            notif.soundName = NSUserNotificationDefaultSoundName;
             notif.title = @"iCleaner";
             notif.informativeText = [NSString stringWithFormat:@"已扫描出目标文件夹大约有 %@ 大小待清理",[CCUtils dirFormatsize:needWeedOutConentSize]];
-            notif.actionButtonTitle = @"clean";
-            notif.otherButtonTitle = @"ignore";
             [[NSUserNotificationCenter defaultUserNotificationCenter] deliverNotification:notif];
         }
         

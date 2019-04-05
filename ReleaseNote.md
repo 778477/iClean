@@ -1,11 +1,5 @@
-#  V1.0
 
- [ ] 支持用户自行添加监测目录，初始目录列表为空
- [ ] 支持用户自行设置监测时间间隔，默认时间间隔为1周。 更改清理周期时将会触发扫描
- [ ] 支持静默清理，可以用户设置为提醒模式，由用户手动确认清楚
- 
- 
- 优化：
+ # Best
  unix 快速获取文件大小 
  https://gist.github.com/samniu/76a1664964489ec2ba7f
  
@@ -13,9 +7,12 @@
 
 # Think
 
-过度设计是影响进度的第一原罪
-
-1. 区别开新加入的文件夹清理时间，在每个文件夹下写入最近清理时间戳
+1. 过度设计是影响进度的第一原罪
 
 
 
+# Trouble
+
+1. [[NSUserNotificationCenter defaultUserNotificationCenter] deliverNotification] 有时候没有展示
+
+2. 区别开新加入的文件夹清理时间，在每个文件夹下写入最近清理时间戳

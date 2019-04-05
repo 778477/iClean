@@ -65,7 +65,6 @@
 - (void)finish{
     [_theItem setView:nil];
     [self.indicator stopAnimation:nil];
-    
     [_theItem setImage:[NSImage imageNamed:@"statusbar_icon"]];
 }
 
