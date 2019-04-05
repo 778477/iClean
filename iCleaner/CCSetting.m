@@ -7,50 +7,71 @@
 //
 
 #import "CCSetting.h"
-
-const NSUInteger ccWeedOutAWeek = 7;
-NSString *const CCBeginWatchNewCachePath = @"CCBeginWatchNewCachePath";
+#import "CCUtils.h"
 
 @implementation CCSetting{
     NSMutableArray<NSString *> *_paths;
+    NSTimeInterval _weedOutInterval;
+    BOOL _silencing;
 }
 
 - (instancetype)init{
     self = [super init];
     if(self){
+        // TODO: load CCSetings.plist
         _weedOutInterval = ccWeedOutAWeek;
-        _isSilent = YES;
+        _silencing = NO;
+        _paths = @[@"/Users/miaoyou.gmy/Library/Developer/Xcode/DerivedData",
+                   @"/Users/miaoyou.gmy/Documents/iCleanTestDir"].mutableCopy;
     }
     return self;
 }
 
-- (void)addWatchCachePath:(NSString *)path{
-    if(!_paths){
-        _paths = [NSMutableArray array];
-    }
-    
-    if([self isExistPath:path]){
-        [_paths addObject:path];
-        [[NSNotificationCenter defaultCenter] postNotificationName:CCBeginWatchNewCachePath
-                                                            object:self
-                                                          userInfo:@{@"path" : path}];
-        
-    }
-    
-}
-
-- (NSArray<NSString *> *)currentWatchingCachePaths{
+#pragma mark - cleanConfig
+- (NSArray<NSString *> *)cleanDirPaths{
     return [_paths copy];
 }
 
-- (BOOL)isExistPath:(NSString *)path{
-    if(!path || path.length < 1) {
-        return NO;
+- (void)updateCleanDirPaths:(NSArray<NSString *> *)paths{
+    [_paths removeAllObjects];
+    for(NSString *path in paths){
+        if([CCUtils isVaildDirPath:path]){
+            [_paths addObject:path];
+        }
     }
     
-    return YES;
+    [[NSNotificationCenter defaultCenter] postNotificationName:kCCStartCleanNotification
+                                                        object:nil];
 }
 
+- (NSTimeInterval)cleanTimeInterval{
+    return _weedOutInterval;
+}
+
+- (BOOL)needWeedout{
+    NSTimeInterval lastClean = [[NSUserDefaults standardUserDefaults] doubleForKey:kCCLastCleanTimeStamp];
+    
+    NSTimeInterval cur = [[NSDate date] timeIntervalSince1970];
+    if(lastClean < 1.0 || (cur - lastClean) >= _weedOutInterval){
+#ifndef DEBUG
+        [[NSUserDefaults standardUserDefaults] setDouble:cur forKey:kCCLastCleanTimeStamp];
+#endif
+        return YES;
+    }
+    return NO;
+}
+
+- (BOOL)silencing{
+    return _silencing;
+}
+
+#pragma mark -
+
+
+/**
+ 持久化缓存目录到本地文件
+ CCSettings.plist
+ */
 - (void)syncCachePathsToLocal{
     
 }

@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-unsigned long long finderSize(NSString * _Nonnull finderPath) OS_ALWAYS_INLINE;
+OS_ALWAYS_INLINE unsigned long long finderSize(NSString * _Nonnull finderPath);
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -16,6 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (BOOL)isVaildDirPath:(NSString *)dirPath;
 
++ (NSString *)dirFormatsize:(uint64_t)contentSize;
 @end
 
 NS_ASSUME_NONNULL_END

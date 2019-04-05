@@ -8,8 +8,8 @@
 
 #import "CCUtils.h"
 
-unsigned long long finderSize(NSString * _Nonnull finderPath){
-    unsigned long long int fileSize = 0;
+OS_ALWAYS_INLINE uint64_t finderSize(NSString * _Nonnull finderPath){
+    uint64_t fileSize = 0;
     @autoreleasepool {
         NSArray *filesArray = [[NSFileManager defaultManager] subpathsOfDirectoryAtPath:finderPath error:nil];
         NSEnumerator *filesEnumerator = [filesArray objectEnumerator];
@@ -26,7 +26,27 @@ unsigned long long finderSize(NSString * _Nonnull finderPath){
 @implementation CCUtils
 
 + (BOOL)isVaildDirPath:(NSString *)dirPath{
-    return YES;
+    NSFileManager *fileManager = [[NSFileManager alloc] init];
+    
+    BOOL isDir;
+    if ([fileManager fileExistsAtPath:dirPath isDirectory:&isDir] && isDir) {
+        return YES;
+    }
+    
+    return NO;
+}
+
++ (NSString *)dirFormatsize:(uint64_t)contentSize{
+    NSString *f;
+    double tmp = contentSize * 1.0 / (1000 * 1000 * 1000);
+    
+    if(tmp > 1.0){
+        f = [NSString stringWithFormat:@"%.2lf GB",tmp];
+    } else {
+        f = [NSString stringWithFormat:@"%.2lf MB",tmp * 1000];
+    }
+    
+    return f;
 }
 
 @end
