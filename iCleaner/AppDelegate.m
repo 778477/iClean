@@ -11,6 +11,8 @@
 #import "CCStatusBarItemMenuController.h"
 #import "CCSetting.h"
 #import "CCleanWroker.h"
+#import "CCAppMenu.h"
+#import "AppDelegate+MainMenuItem.h"
 
 @interface AppDelegate ()
 @property (nonatomic) NSStatusItem *theItem;
@@ -19,6 +21,8 @@
 @end
 
 @implementation AppDelegate
+
+
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     
@@ -30,7 +34,13 @@
     CCSetting *defaultSetting = [[CCSetting alloc] init];
     [[CCleanWroker defaultWorker] loadCleanConfig:defaultSetting];
     [[CCleanWroker defaultWorker] startClean];
+    
+    
+//    [self populateMainMenu];
+    [CCAppMenu loadMenu];
 }
+
+
 
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification {
@@ -67,5 +77,8 @@
     [self.indicator stopAnimation:nil];
     [_theItem setImage:[NSImage imageNamed:@"statusbar_icon"]];
 }
+
+
+
 
 @end

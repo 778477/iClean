@@ -8,8 +8,16 @@
 
 #import <Cocoa/Cocoa.h>
 #import "AppDelegate.h"
+#import "CCAppMenu.h"
+
 int main(int argc, const char * argv[]) {
-    AppDelegate *app = [[AppDelegate alloc] init];
-    [NSApplication sharedApplication].delegate = app;
-    return NSApplicationMain(argc, argv);
+    @autoreleasepool {
+        /*NS_VALID_UNTIL_END_OF_SCOPE*/ AppDelegate *app = [[AppDelegate alloc] init];
+        [NSApplication sharedApplication];
+        [NSApp setDelegate:app];
+        [NSApp run];
+        app = nil;
+    }
+    return 0;
+  
 }

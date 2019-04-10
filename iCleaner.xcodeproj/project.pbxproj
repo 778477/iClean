@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8D151C35225E326F009D4B2A /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 8D151C34225E326F009D4B2A /* Credits.rtf */; };
+		8D151C38225E3846009D4B2A /* AppDelegate+MainMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D151C37225E3846009D4B2A /* AppDelegate+MainMenuItem.m */; };
+		8D151C3B225E39E2009D4B2A /* CCAppMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D151C3A225E39E2009D4B2A /* CCAppMenu.m */; };
 		8D616873218D9930009B92EE /* CCSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D616872218D9930009B92EE /* CCSetting.m */; };
 		8D616876218DA277009B92EE /* CCUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D616875218DA277009B92EE /* CCUtils.m */; };
 		8DC3681C22576F9600DA6877 /* CCleanWroker.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DC3681B22576F9600DA6877 /* CCleanWroker.m */; };
@@ -24,6 +27,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8D151C34225E326F009D4B2A /* Credits.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
+		8D151C36225E3846009D4B2A /* AppDelegate+MainMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+MainMenuItem.h"; sourceTree = "<group>"; };
+		8D151C37225E3846009D4B2A /* AppDelegate+MainMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+MainMenuItem.m"; sourceTree = "<group>"; };
+		8D151C39225E39E2009D4B2A /* CCAppMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCAppMenu.h; sourceTree = "<group>"; };
+		8D151C3A225E39E2009D4B2A /* CCAppMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCAppMenu.m; sourceTree = "<group>"; };
 		8D616871218D9930009B92EE /* CCSetting.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCSetting.h; sourceTree = "<group>"; };
 		8D616872218D9930009B92EE /* CCSetting.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CCSetting.m; sourceTree = "<group>"; };
 		8D616874218DA277009B92EE /* CCUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCUtils.h; sourceTree = "<group>"; };
@@ -83,6 +91,7 @@
 		F52FEA441EA89C0C003B8083 = {
 			isa = PBXGroup;
 			children = (
+				8D151C34225E326F009D4B2A /* Credits.rtf */,
 				8DE0DCDA217483270079AE4C /* LICENSE */,
 				8DE0DCDD217485B10079AE4C /* ReleaseNote.md */,
 				8DE0DCD9217483270079AE4C /* README.md */,
@@ -104,6 +113,10 @@
 			children = (
 				F52FEA501EA89C0C003B8083 /* AppDelegate.h */,
 				F52FEA511EA89C0C003B8083 /* AppDelegate.m */,
+				8D151C39225E39E2009D4B2A /* CCAppMenu.h */,
+				8D151C3A225E39E2009D4B2A /* CCAppMenu.m */,
+				8D151C36225E3846009D4B2A /* AppDelegate+MainMenuItem.h */,
+				8D151C37225E3846009D4B2A /* AppDelegate+MainMenuItem.m */,
 				8DC3681D2257716300DA6877 /* Core */,
 				F5985D2B1EB0A22300ACEF4E /* CCStatusBarItemMenuController.h */,
 				F5985D2C1EB0A22300ACEF4E /* CCStatusBarItemMenuController.m */,
@@ -193,6 +206,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8D151C35225E326F009D4B2A /* Credits.rtf in Resources */,
 				F52FEA5A1EA89C0C003B8083 /* Assets.xcassets in Resources */,
 				8DE0DCDB217483270079AE4C /* README.md in Resources */,
 				F5985D281EB09B2F00ACEF4E /* CCSettings.plist in Resources */,
@@ -213,8 +227,10 @@
 				F52FEA551EA89C0C003B8083 /* main.m in Sources */,
 				8D616876218DA277009B92EE /* CCUtils.m in Sources */,
 				F5985D2D1EB0A22300ACEF4E /* CCStatusBarItemMenuController.m in Sources */,
+				8D151C3B225E39E2009D4B2A /* CCAppMenu.m in Sources */,
 				F52FEA6B1EA8B1CF003B8083 /* CCXcodeDeviceDataManager.m in Sources */,
 				8D616873218D9930009B92EE /* CCSetting.m in Sources */,
+				8D151C38225E3846009D4B2A /* AppDelegate+MainMenuItem.m in Sources */,
 				F52FEA521EA89C0C003B8083 /* AppDelegate.m in Sources */,
 				8DC368222257911300DA6877 /* CCleanWroker+CCUserNotification.m in Sources */,
 			);
