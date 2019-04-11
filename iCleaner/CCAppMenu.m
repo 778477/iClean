@@ -10,6 +10,15 @@
 
 @implementation CCAppMenu
 
+NSString * AppName(){
+    static NSString *appName = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        appName = [[NSProcessInfo processInfo] processName];
+    });
+    return appName;
+}
+
 + (void)loadMenu{
     [self populateMainMenu];
 }
@@ -27,12 +36,13 @@
     NSString *title;
     NSMenuItem *menuItem;
     
-    title = @"About";
+    title = [NSString stringWithFormat:@"About %@", AppName()];
     menuItem = [menu addItemWithTitle:title action:@selector(orderFrontStandardAboutPanel:) keyEquivalent:@""];
     menuItem.target = NSApp;
     [menu addItem:[NSMenuItem separatorItem]];
     
-    title = @"Quit";
+    
+    title = [NSString stringWithFormat:@"Quit %@", AppName()];
     menuItem = [menu addItemWithTitle:title action:@selector(terminate:) keyEquivalent:@"q"];
     menuItem.target = NSApp;
 }

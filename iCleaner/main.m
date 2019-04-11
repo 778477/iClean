@@ -13,7 +13,7 @@
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         /*NS_VALID_UNTIL_END_OF_SCOPE*/ AppDelegate *app = [[AppDelegate alloc] init];
-        [NSApplication sharedApplication];
+        NSApplicationLoad();
         [NSApp setDelegate:app];
         [NSApp run];
         app = nil;

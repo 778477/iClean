@@ -36,7 +36,6 @@
     [[CCleanWroker defaultWorker] startClean];
     
     
-//    [self populateMainMenu];
     [CCAppMenu loadMenu];
 }
 
