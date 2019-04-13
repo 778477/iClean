@@ -12,7 +12,7 @@
 #import "CCSetting.h"
 #import "CCleanWroker.h"
 #import "CCAppMenu.h"
-#import "AppDelegate+MainMenuItem.h"
+
 
 @interface AppDelegate ()
 @property (nonatomic) NSStatusItem *theItem;
