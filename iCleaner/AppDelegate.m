@@ -32,7 +32,7 @@
     [_theItem setMenu:self.mc.theMenu];
     
     CCSetting *defaultSetting = [[CCSetting alloc] init];
-    [[CCleanWroker defaultWorker] loadCleanConfig:defaultSetting];
+    [CCleanWroker defaultWorker].config = defaultSetting;
     [[CCleanWroker defaultWorker] startClean];
     
     
@@ -40,11 +40,10 @@
 }
 
 
-
-
 - (void)applicationWillTerminate:(NSNotification *)aNotification {
     // Insert code here to tear down your application
 }
+
 
 #pragma mark - 
 - (CCStatusBarItemMenuController *)mc{

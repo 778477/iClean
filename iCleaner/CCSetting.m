@@ -9,41 +9,34 @@
 #import "CCSetting.h"
 #import "CCUtils.h"
 
-@implementation CCSetting{
-    NSMutableArray<NSString *> *_paths;
-    NSTimeInterval _weedOutInterval;
-    BOOL _silencing;
+NSTimeInterval weedoutTimeIntervalFromDay(NSInteger day){
+    if(day < 1) return ccWeedOutAWeek;
+    
+    return day * 24 * 60 * 60;
 }
+
+@implementation CCSetting{
+    NSTimeInterval _weedOutInterval;
+}
+@synthesize silencing = _silencing, cleanDay = _cleanDay, cleanDirPaths = _cleanDirPaths;
 
 - (instancetype)init{
     self = [super init];
     if(self){
-        // TODO: load CCSetings.plist
-        _weedOutInterval = ccWeedOutAWeek;
-        _silencing = NO;
-        _paths = @[@"/Users/miaoyou.gmy/Library/Developer/Xcode/DerivedData",
-                   @"/Users/miaoyou.gmy/Documents/iCleanTestDir"].mutableCopy;
+        
+        // load setting data from settings.plist
+        NSURL *fileUrl = [[NSBundle mainBundle] URLForResource:@"settings" withExtension:@"json"];
+        NSData *data = [NSData dataWithContentsOfURL:fileUrl];
+        NSDictionary *setting = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
+        _cleanDay = [setting[@"cleanTimeInterval"] integerValue];
+        _weedOutInterval = weedoutTimeIntervalFromDay(_cleanDay);
+        _silencing = [setting[@"silencing"] boolValue];
+        _cleanDirPaths = [setting[@"needCleanPaths"] mutableCopy];
     }
     return self;
 }
 
 #pragma mark - cleanConfig
-- (NSArray<NSString *> *)cleanDirPaths{
-    return [_paths copy];
-}
-
-- (void)updateCleanDirPaths:(NSArray<NSString *> *)paths{
-    [_paths removeAllObjects];
-    for(NSString *path in paths){
-        if([CCUtils isVaildDirPath:path]){
-            [_paths addObject:path];
-        }
-    }
-    
-    [[NSNotificationCenter defaultCenter] postNotificationName:kCCStartCleanNotification
-                                                        object:nil];
-}
-
 - (NSTimeInterval)cleanTimeInterval{
     return _weedOutInterval;
 }
@@ -61,9 +54,6 @@
     return NO;
 }
 
-- (BOOL)silencing{
-    return _silencing;
-}
 
 #pragma mark -
 
@@ -72,8 +62,19 @@
  持久化缓存目录到本地文件
  CCSettings.plist
  */
-- (void)syncCachePathsToLocal{
+- (BOOL)syncSettingContentToLocalFile{
+    NSDictionary *setting = @{@"silencing": @(self.silencing),
+                              @"cleanTimeInterval": @(self.cleanDay),
+                              @"needCleanPaths":self.cleanDirPaths.copy
+                              };
     
+    NSURL *fileUrl = [[NSBundle mainBundle] URLForResource:@"settings"
+                                             withExtension:@"json"];
+    
+    NSData *data = [NSJSONSerialization dataWithJSONObject:setting
+                                                   options:NSJSONWritingPrettyPrinted
+                                                     error:nil];
+    return [data writeToURL:fileUrl atomically:YES];
 }
 
 @end

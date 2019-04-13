@@ -24,10 +24,15 @@ static NSString *const kCCleanNotificationAction = @"kCCleanNotificationAction";
 
 
 @protocol CleanConfig <NSObject>
+/**
+ 是否静默模式，默认为YES
+ 
+ @discucc 打开静默之后，自动清理缓存文件，并以通知形式告知用户节省了多少磁盘空间
+ */
+@property (nonatomic, assign) BOOL silencing;
+@property (nonatomic, assign) NSInteger cleanDay;
+@property (nonatomic, strong) NSMutableArray<NSString *> *cleanDirPaths;
 
-- (NSArray<NSString *> *)cleanDirPaths;
-
-- (void)updateCleanDirPaths:(NSArray<NSString *> *)paths;
 
 /**
  间隔时间 默认为 7天
@@ -40,11 +45,7 @@ static NSString *const kCCleanNotificationAction = @"kCCleanNotificationAction";
 
 - (BOOL)needWeedout;
 
-/**
- 是否静默模式，默认为YES
- 
- @discucc 打开静默之后，自动清理缓存文件，并以通知形式告知用户节省了多少磁盘空间
- */
-- (BOOL)silencing;
+- (BOOL)syncSettingContentToLocalFile;
+
 
 @end

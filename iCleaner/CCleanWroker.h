@@ -10,11 +10,9 @@
 #import "CCleanConfig.h"
 
 @interface CCleanWroker : NSObject
-
+@property (nonatomic, strong) id<CleanConfig> config;
 
 + (instancetype)defaultWorker;
-
-- (void)loadCleanConfig:(id<CleanConfig>)config;
 
 - (void)startClean;
 

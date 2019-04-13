@@ -16,7 +16,6 @@ const uint32_t kCleanWokerTimerTotal = 60 * kCleanWokerTimerOnce; // 1 hour
 
 @interface CCleanWroker()
 @property (nonatomic, strong) dispatch_queue_t queue;
-@property (nonatomic, strong) id<CleanConfig> config;
 @property (nonatomic, strong) NSArray<CCDerivedDataFinderModel *> *needWeedoutDirs;
 @end
 
@@ -80,9 +79,6 @@ const uint32_t kCleanWokerTimerTotal = 60 * kCleanWokerTimerOnce; // 1 hour
 }
 
 #pragma mark - public
-- (void)loadCleanConfig:(id<CleanConfig>)config{
-    _config = config;
-}
 
 - (void)startClean{
     if(!_timer){
@@ -101,15 +97,15 @@ const uint32_t kCleanWokerTimerTotal = 60 * kCleanWokerTimerOnce; // 1 hour
             }
         }
         
-        
-        NSString *log = [NSString stringWithFormat:@"已清理大约 %@ 磁盘空间",[CCUtils dirFormatsize:cleanedConentSize]];
-        NSUserNotification *notif = [[NSUserNotification alloc] init];
-        notif.title = @"iCleaner";
-        notif.informativeText = log;
-        [[NSUserNotificationCenter defaultUserNotificationCenter] deliverNotification:notif];
-        
         id<CleanAppDelegate> delagete = (id<CleanAppDelegate>)[NSApplication sharedApplication].delegate;
         dispatch_async(dispatch_get_main_queue(), ^{
+            
+            NSString *log = [NSString stringWithFormat:@"已清理大约 %@ 磁盘空间",[CCUtils dirFormatsize:cleanedConentSize]];
+            NSUserNotification *notif = [[NSUserNotification alloc] init];
+            notif.title = @"iCleaner";
+            notif.informativeText = log;
+            [[NSUserNotificationCenter defaultUserNotificationCenter] deliverNotification:notif];
+            
             [delagete finish];
         });
     });
@@ -157,18 +153,29 @@ const uint32_t kCleanWokerTimerTotal = 60 * kCleanWokerTimerOnce; // 1 hour
         
         // 小于10MB 忽略清理
         if(needWeedOutConentSize < 10 * 1000 * 1000){
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                NSUserNotification *notif = [[NSUserNotification alloc] init];
+                notif.soundName = NSUserNotificationDefaultSoundName;
+                notif.title = @"iCleaner";
+                notif.informativeText = @"目标文件夹内容小于10MB,未触发清理";
+                [[NSUserNotificationCenter defaultUserNotificationCenter] deliverNotification:notif];
+            });
+            
             return ;
         }
         
         
         self.needWeedoutDirs = finders.copy;
         if(!self.config.silencing){
-            NSUserNotification *notif = [[NSUserNotification alloc] init];
-            notif.identifier = kCCleanNotificationAction;
-            notif.soundName = NSUserNotificationDefaultSoundName;
-            notif.title = @"iCleaner";
-            notif.informativeText = [NSString stringWithFormat:@"已扫描出目标文件夹大约有 %@ 大小待清理",[CCUtils dirFormatsize:needWeedOutConentSize]];
-            [[NSUserNotificationCenter defaultUserNotificationCenter] deliverNotification:notif];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                NSUserNotification *notif = [[NSUserNotification alloc] init];
+                notif.identifier = kCCleanNotificationAction;
+                notif.soundName = NSUserNotificationDefaultSoundName;
+                notif.title = @"iCleaner";
+                notif.informativeText = [NSString stringWithFormat:@"已扫描出目标文件夹大约有 %@ 大小待清理",[CCUtils dirFormatsize:needWeedOutConentSize]];
+                [[NSUserNotificationCenter defaultUserNotificationCenter] deliverNotification:notif];
+            });
         }
         
     });

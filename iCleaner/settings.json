@@ -1,0 +1,7 @@
+{
+    "silencing":false,
+    "cleanTimeInterval":7,
+    "needCleanPaths":[
+        "/Users/miaoyou.gmy/Library/Developer/Xcode/DerivedData"
+    ]
+}

@@ -14,6 +14,7 @@
 		8D151C42225F8610009D4B2A /* CCSettingWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D151C40225F8610009D4B2A /* CCSettingWindowController.xib */; };
 		8D616873218D9930009B92EE /* CCSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D616872218D9930009B92EE /* CCSetting.m */; };
 		8D616876218DA277009B92EE /* CCUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D616875218DA277009B92EE /* CCUtils.m */; };
+		8DA66E182260F31800F1C3E7 /* CCApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DA66E172260F31800F1C3E7 /* CCApplication.m */; };
 		8DC3681C22576F9600DA6877 /* CCleanWroker.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DC3681B22576F9600DA6877 /* CCleanWroker.m */; };
 		8DC368222257911300DA6877 /* CCleanWroker+CCUserNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DC368212257911300DA6877 /* CCleanWroker+CCUserNotification.m */; };
 		8DE0DCDB217483270079AE4C /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 8DE0DCD9217483270079AE4C /* README.md */; };
@@ -24,7 +25,7 @@
 		F52FEA681EA8AA57003B8083 /* CCHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F52FEA671EA8AA57003B8083 /* CCHomeViewController.m */; };
 		F52FEA6B1EA8B1CF003B8083 /* CCXcodeDeviceDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F52FEA6A1EA8B1CF003B8083 /* CCXcodeDeviceDataManager.m */; };
 		F52FEA6E1EA8D073003B8083 /* CCDerivedDataFinderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F52FEA6D1EA8D073003B8083 /* CCDerivedDataFinderModel.m */; };
-		F5985D281EB09B2F00ACEF4E /* CCSettings.plist in Resources */ = {isa = PBXBuildFile; fileRef = F5985D271EB09B2F00ACEF4E /* CCSettings.plist */; };
+		F5985D281EB09B2F00ACEF4E /* settings.json in Resources */ = {isa = PBXBuildFile; fileRef = F5985D271EB09B2F00ACEF4E /* settings.json */; };
 		F5985D2D1EB0A22300ACEF4E /* CCStatusBarItemMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5985D2C1EB0A22300ACEF4E /* CCStatusBarItemMenuController.m */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +42,8 @@
 		8D616872218D9930009B92EE /* CCSetting.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CCSetting.m; sourceTree = "<group>"; };
 		8D616874218DA277009B92EE /* CCUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCUtils.h; sourceTree = "<group>"; };
 		8D616875218DA277009B92EE /* CCUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CCUtils.m; sourceTree = "<group>"; };
+		8DA66E162260F31800F1C3E7 /* CCApplication.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCApplication.h; sourceTree = "<group>"; };
+		8DA66E172260F31800F1C3E7 /* CCApplication.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CCApplication.m; sourceTree = "<group>"; };
 		8DC3681A22576F9600DA6877 /* CCleanWroker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCleanWroker.h; sourceTree = "<group>"; };
 		8DC3681B22576F9600DA6877 /* CCleanWroker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCleanWroker.m; sourceTree = "<group>"; };
 		8DC3681E225771F300DA6877 /* CCleanConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCleanConfig.h; sourceTree = "<group>"; };
@@ -63,7 +66,7 @@
 		F52FEA6A1EA8B1CF003B8083 /* CCXcodeDeviceDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCXcodeDeviceDataManager.m; sourceTree = "<group>"; };
 		F52FEA6C1EA8D073003B8083 /* CCDerivedDataFinderModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCDerivedDataFinderModel.h; sourceTree = "<group>"; };
 		F52FEA6D1EA8D073003B8083 /* CCDerivedDataFinderModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCDerivedDataFinderModel.m; sourceTree = "<group>"; };
-		F5985D271EB09B2F00ACEF4E /* CCSettings.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = CCSettings.plist; sourceTree = "<group>"; };
+		F5985D271EB09B2F00ACEF4E /* settings.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = settings.json; sourceTree = "<group>"; };
 		F5985D2B1EB0A22300ACEF4E /* CCStatusBarItemMenuController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCStatusBarItemMenuController.h; sourceTree = "<group>"; };
 		F5985D2C1EB0A22300ACEF4E /* CCStatusBarItemMenuController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCStatusBarItemMenuController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -118,6 +121,8 @@
 			children = (
 				F52FEA501EA89C0C003B8083 /* AppDelegate.h */,
 				F52FEA511EA89C0C003B8083 /* AppDelegate.m */,
+				8DA66E162260F31800F1C3E7 /* CCApplication.h */,
+				8DA66E172260F31800F1C3E7 /* CCApplication.m */,
 				8D151C39225E39E2009D4B2A /* CCAppMenu.h */,
 				8D151C3A225E39E2009D4B2A /* CCAppMenu.m */,
 				8D151C36225E3846009D4B2A /* AppDelegate+MainMenuItem.h */,
@@ -140,7 +145,7 @@
 				F52FEA5E1EA89C0C003B8083 /* Info.plist */,
 				F52FEA641EA8A7E4003B8083 /* CCCommonDefines.h */,
 				F52FEA531EA89C0C003B8083 /* Supporting Files */,
-				F5985D271EB09B2F00ACEF4E /* CCSettings.plist */,
+				F5985D271EB09B2F00ACEF4E /* settings.json */,
 			);
 			path = iCleaner;
 			sourceTree = "<group>";
@@ -217,7 +222,7 @@
 				8D151C35225E326F009D4B2A /* Credits.rtf in Resources */,
 				F52FEA5A1EA89C0C003B8083 /* Assets.xcassets in Resources */,
 				8DE0DCDB217483270079AE4C /* README.md in Resources */,
-				F5985D281EB09B2F00ACEF4E /* CCSettings.plist in Resources */,
+				F5985D281EB09B2F00ACEF4E /* settings.json in Resources */,
 				8D151C42225F8610009D4B2A /* CCSettingWindowController.xib in Resources */,
 				8DE0DCDC217483270079AE4C /* LICENSE in Resources */,
 			);
@@ -230,6 +235,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8DA66E182260F31800F1C3E7 /* CCApplication.m in Sources */,
 				F52FEA681EA8AA57003B8083 /* CCHomeViewController.m in Sources */,
 				8DC3681C22576F9600DA6877 /* CCleanWroker.m in Sources */,
 				F52FEA6E1EA8D073003B8083 /* CCDerivedDataFinderModel.m in Sources */,
