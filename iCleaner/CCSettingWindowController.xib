@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="11762" systemVersion="16G1510" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14490.70"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11762"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -21,13 +21,13 @@
             <windowStyleMask key="styleMask" titled="YES" closable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="196" y="240" width="387" height="279"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
             <value key="minSize" type="size" width="387" height="279"/>
-            <view key="contentView" wantsLayer="YES" id="se5-gp-TjO">
-                <rect key="frame" x="0.0" y="0.0" width="387" height="288"/>
+            <view key="contentView" wantsLayer="YES" misplaced="YES" id="se5-gp-TjO">
+                <rect key="frame" x="0.0" y="0.0" width="387" height="279"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <comboBox autoresizesSubviews="NO" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JeB-bQ-4VA">
+                    <comboBox autoresizesSubviews="NO" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="JeB-bQ-4VA">
                         <rect key="frame" x="24" y="216" width="128" height="26"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="20" id="5kN-Yh-Xkq"/>
@@ -47,7 +47,7 @@
                             <action selector="selectWeedOutDays:" target="-2" id="tGq-kW-eUH"/>
                         </connections>
                     </comboBox>
-                    <textField autoresizesSubviews="NO" horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jgt-RL-pna">
+                    <textField autoresizesSubviews="NO" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="jgt-RL-pna">
                         <rect key="frame" x="31" y="248" width="111" height="17"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="17" id="by1-V4-ckT"/>
@@ -59,7 +59,7 @@
                         </textFieldCell>
                     </textField>
                     <scrollView misplaced="YES" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Na1-l5-7KP">
-                        <rect key="frame" x="73" y="76" width="240" height="135"/>
+                        <rect key="frame" x="73" y="67" width="240" height="135"/>
                         <clipView key="contentView" id="Mhc-lM-Log">
                             <rect key="frame" x="1" y="0.0" width="238" height="134"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -95,7 +95,7 @@
                                                             </constraints>
                                                             <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="NSActionTemplate" id="Hf0-4J-AOI"/>
                                                         </imageView>
-                                                        <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" allowsExpansionToolTips="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="abi-ca-JXX">
+                                                        <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="abi-ca-JXX">
                                                             <rect key="frame" x="25" y="0.0" width="215" height="17"/>
                                                             <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Table View Cell" id="Sqj-rL-Nia">
                                                                 <font key="font" metaFont="system"/>
@@ -123,11 +123,11 @@
                                 </tableView>
                             </subviews>
                         </clipView>
-                        <scroller key="horizontalScroller" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="901-gK-pvk">
+                        <scroller key="horizontalScroller" verticalHuggingPriority="750" horizontal="YES" id="901-gK-pvk">
                             <rect key="frame" x="1" y="118" width="238" height="16"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
-                        <scroller key="verticalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="Ib9-qK-KYd">
+                        <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="NO" id="Ib9-qK-KYd">
                             <rect key="frame" x="224" y="17" width="15" height="102"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
@@ -136,7 +136,7 @@
                             <autoresizingMask key="autoresizingMask"/>
                         </tableHeaderView>
                     </scrollView>
-                    <textField verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yp7-HO-e0v">
+                    <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="yp7-HO-e0v">
                         <rect key="frame" x="73" y="30" width="241" height="24"/>
                         <constraints>
                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="240" id="JD4-73-KHv"/>
@@ -151,7 +151,7 @@
                         </connections>
                     </textField>
                     <button horizontalHuggingPriority="750" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="9L2-94-OpL">
-                        <rect key="frame" x="355" y="5" width="25" height="25"/>
+                        <rect key="frame" x="355" y="6" width="25" height="25"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="21" id="Fgh-H0-kBz"/>
                             <constraint firstAttribute="width" constant="21" id="jSb-lD-fjT"/>
@@ -202,7 +202,7 @@
             <connections>
                 <outlet property="delegate" destination="-2" id="0bl-1N-AYu"/>
             </connections>
-            <point key="canvasLocation" x="-16.5" y="88.5"/>
+            <point key="canvasLocation" x="88" y="-51"/>
         </window>
     </objects>
     <resources>
