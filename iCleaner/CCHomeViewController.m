@@ -106,9 +106,9 @@ NSComboBoxDataSource>
         cell.selectable = cell.editable = NO;
     }
     
-    NSMutableAttributedString *str = [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"%@ \n%@ \n%@",self.data[row].path.lastPathComponent,self.data[row].formatSize,self.data[row].fileModificationDate]  attributes:@{NSForegroundColorAttributeName:[NSColor blackColor]}];
+//    NSMutableAttributedString *str = [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"%@ \n%@ \n%@",self.data[row].path.lastPathComponent,self.data[row].formatSize,self.data[row].fileModificationDate]  attributes:@{NSForegroundColorAttributeName:[NSColor blackColor]}];
     
-    cell.placeholderAttributedString = str;
+//    cell.placeholderAttributedString = @"nil";
     return cell;
 }
 

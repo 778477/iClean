@@ -7,52 +7,74 @@
 //
 
 #import "CCSetting.h"
+#import "CCUtils.h"
 
-const NSUInteger ccWeedOutAWeek = 7;
-NSString *const CCBeginWatchNewCachePath = @"CCBeginWatchNewCachePath";
+NSTimeInterval weedoutTimeIntervalFromDay(NSInteger day){
+    if(day < 1) return ccWeedOutAWeek;
+    
+    return day * 24 * 60 * 60;
+}
 
 @implementation CCSetting{
-    NSMutableArray<NSString *> *_paths;
+    NSTimeInterval _weedOutInterval;
 }
+@synthesize silencing = _silencing, cleanDay = _cleanDay, cleanDirPaths = _cleanDirPaths;
 
 - (instancetype)init{
     self = [super init];
     if(self){
-        _weedOutInterval = ccWeedOutAWeek;
-        _isSilent = YES;
+        
+        // load setting data from settings.plist
+        NSURL *fileUrl = [[NSBundle mainBundle] URLForResource:@"settings" withExtension:@"json"];
+        NSData *data = [NSData dataWithContentsOfURL:fileUrl];
+        NSDictionary *setting = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
+        _cleanDay = [setting[@"cleanTimeInterval"] integerValue];
+        _weedOutInterval = weedoutTimeIntervalFromDay(_cleanDay);
+        _silencing = [setting[@"silencing"] boolValue];
+        _cleanDirPaths = [setting[@"needCleanPaths"] mutableCopy];
     }
     return self;
 }
 
-- (void)addWatchCachePath:(NSString *)path{
-    if(!_paths){
-        _paths = [NSMutableArray array];
-    }
-    
-    if([self isExistPath:path]){
-        [_paths addObject:path];
-        [[NSNotificationCenter defaultCenter] postNotificationName:CCBeginWatchNewCachePath
-                                                            object:self
-                                                          userInfo:@{@"path" : path}];
-        
-    }
-    
+#pragma mark - cleanConfig
+- (NSTimeInterval)cleanTimeInterval{
+    return _weedOutInterval;
 }
 
-- (NSArray<NSString *> *)currentWatchingCachePaths{
-    return [_paths copy];
-}
-
-- (BOOL)isExistPath:(NSString *)path{
-    if(!path || path.length < 1) {
-        return NO;
+- (BOOL)needWeedout{
+    NSTimeInterval lastClean = [[NSUserDefaults standardUserDefaults] doubleForKey:kCCLastCleanTimeStamp];
+    
+    NSTimeInterval cur = [[NSDate date] timeIntervalSince1970];
+    if(lastClean < 1.0 || (cur - lastClean) >= _weedOutInterval){
+#ifndef DEBUG
+        [[NSUserDefaults standardUserDefaults] setDouble:cur forKey:kCCLastCleanTimeStamp];
+#endif
+        return YES;
     }
-    
-    return YES;
+    return NO;
 }
 
-- (void)syncCachePathsToLocal{
+
+#pragma mark -
+
+
+/**
+ 持久化缓存目录到本地文件
+ CCSettings.plist
+ */
+- (BOOL)syncSettingContentToLocalFile{
+    NSDictionary *setting = @{@"silencing": @(self.silencing),
+                              @"cleanTimeInterval": @(self.cleanDay),
+                              @"needCleanPaths":self.cleanDirPaths.copy
+                              };
     
+    NSURL *fileUrl = [[NSBundle mainBundle] URLForResource:@"settings"
+                                             withExtension:@"json"];
+    
+    NSData *data = [NSJSONSerialization dataWithJSONObject:setting
+                                                   options:NSJSONWritingPrettyPrinted
+                                                     error:nil];
+    return [data writeToURL:fileUrl atomically:YES];
 }
 
 @end

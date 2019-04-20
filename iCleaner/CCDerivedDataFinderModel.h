@@ -10,15 +10,12 @@
 
 @interface CCDerivedDataFinderModel : NSObject
 
-@property (nonatomic) NSString *path;
-@property (nonatomic) NSString *fileType;
-@property (nonatomic) unsigned long long fileSize;
-@property (nonatomic) NSDate *fileModificationDate;
-@property (nonatomic) NSDate *fileCreationDate;
-@property (nonatomic, readonly) double contentSize;
-@property (nonatomic) NSString *formatSize;
+@property (nonatomic, readonly) NSString *path;
+@property (nonatomic, readonly) uint64_t contentSize;
 
 - (instancetype)initWithFilePath:(NSString *)path
                        attribute:(NSDictionary<NSFileAttributeKey, id> *)attributes NS_DESIGNATED_INITIALIZER;
+
+- (BOOL)isNeedWeedOut:(NSTimeInterval)interval;
 
 @end

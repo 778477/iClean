@@ -9,13 +9,20 @@
 #import "AppDelegate.h"
 #import "CCHomeViewController.h"
 #import "CCStatusBarItemMenuController.h"
+#import "CCSetting.h"
+#import "CCleanWroker.h"
+#import "CCAppMenu.h"
+
 
 @interface AppDelegate ()
 @property (nonatomic) NSStatusItem *theItem;
+@property (nonatomic) NSProgressIndicator *indicator;
 @property (nonatomic) CCStatusBarItemMenuController *mc;
 @end
 
 @implementation AppDelegate
+
+
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     
@@ -23,13 +30,20 @@
     _theItem = [bar statusItemWithLength:bar.thickness];
     [_theItem setImage:[NSImage imageNamed:@"statusbar_icon"]];
     [_theItem setMenu:self.mc.theMenu];
-
+    
+    CCSetting *defaultSetting = [[CCSetting alloc] init];
+    [CCleanWroker defaultWorker].config = defaultSetting;
+    [[CCleanWroker defaultWorker] startClean];
+    
+    
+    [CCAppMenu loadMenu];
 }
 
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification {
     // Insert code here to tear down your application
 }
+
 
 #pragma mark - 
 - (CCStatusBarItemMenuController *)mc{
@@ -38,6 +52,31 @@
     }
     return _mc;
 }
+
+- (NSProgressIndicator *)indicator{
+    if(!_indicator){
+        _indicator = [[NSProgressIndicator alloc] init];
+        _indicator.style = NSProgressIndicatorBarStyle;
+        _indicator.usesThreadedAnimation = YES;
+        [_indicator sizeToFit];
+    }
+    return _indicator;
+}
+
+
+#pragma mark - CleanAppDelegate
+- (void)cleaning{
+    [_theItem setView:self.indicator];
+    [self.indicator startAnimation:nil];
+}
+
+- (void)finish{
+    [_theItem setView:nil];
+    [self.indicator stopAnimation:nil];
+    [_theItem setImage:[NSImage imageNamed:@"statusbar_icon"]];
+}
+
+
 
 
 @end

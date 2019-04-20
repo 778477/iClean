@@ -10,7 +10,12 @@
 #import "CCXcodeDeviceDataManager.h"
 #import "CCUtils.h"
 
-@implementation CCDerivedDataFinderModel
+@implementation CCDerivedDataFinderModel{
+    NSDate *_fileModificationDate;
+    NSDate *_fileCreationDate;
+    NSString *_fileType;
+    uint64_t _contentSize;
+}
 - (instancetype)init{
     return [self initWithFilePath:@"unkown" attribute:@{}];
 }
@@ -18,27 +23,22 @@
 - (instancetype)initWithFilePath:(NSString *)path attribute:(NSDictionary<NSFileAttributeKey,id> *)attributes{
     self = [super init];
     if (self) {
-        
         _path = path;
         _fileType = attributes[NSFileType];
-        _fileSize = finderSize(path);
+        _contentSize = finderSize(path);
         _fileCreationDate = attributes[NSFileCreationDate];
         _fileModificationDate = attributes[NSFileModificationDate];
-        _contentSize = _fileSize*1.0 / ( 1000 * 1000 * 1000);
     }
     return self;
 }
 
-
-- (NSString *)formatSize{
-    NSString *f;
+- (BOOL)isNeedWeedOut:(NSTimeInterval)interval{
     
-    if(_contentSize > 1.0){
-        f = [NSString stringWithFormat:@"%.2lf GB",_contentSize];
-    } else {
-        f = [NSString stringWithFormat:@"%.2lf MB",_contentSize * 1000];
+    if(NSDate.date.timeIntervalSince1970 - _fileModificationDate.timeIntervalSince1970 >= interval){
+        return YES;
     }
     
-    return f;
+    return NO;
 }
+
 @end
