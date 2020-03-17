@@ -46,9 +46,7 @@ NSTimeInterval weedoutTimeIntervalFromDay(NSInteger day){
     
     NSTimeInterval cur = [[NSDate date] timeIntervalSince1970];
     if(lastClean < 1.0 || (cur - lastClean) >= _weedOutInterval){
-#ifndef DEBUG
         [[NSUserDefaults standardUserDefaults] setDouble:cur forKey:kCCLastCleanTimeStamp];
-#endif
         return YES;
     }
     return NO;

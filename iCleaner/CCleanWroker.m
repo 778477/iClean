@@ -80,11 +80,20 @@ const uint32_t kCleanWokerTimerTotal = 60 * kCleanWokerTimerOnce; // 1 hour
 
 #pragma mark - public
 
-- (void)startClean{
+- (void)startTimer{
     if(!_timer){
         [self resumeTimer];
     }
     [self startCleanIfNeed];
+}
+
+
+- (void)startCleanIfNeed{
+    if(![_config needWeedout]){
+        return ;
+    }
+    
+    [self startClean];
 }
 
 - (void)weedoutIfNeed{
@@ -113,12 +122,7 @@ const uint32_t kCleanWokerTimerTotal = 60 * kCleanWokerTimerOnce; // 1 hour
 
 #pragma mark - private
 
-- (void)startCleanIfNeed{
-    if(![_config needWeedout]){
-        return ;
-    }
-    
-
+- (void)startClean{
     // do the job
     dispatch_async(self.queue, ^{
         

@@ -22,10 +22,7 @@
 
 @implementation AppDelegate
 
-
-
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
-    
     NSStatusBar *bar = [NSStatusBar systemStatusBar];
     _theItem = [bar statusItemWithLength:bar.thickness];
     [_theItem setImage:[NSImage imageNamed:@"statusbar_icon"]];
@@ -33,9 +30,8 @@
     
     CCSetting *defaultSetting = [[CCSetting alloc] init];
     [CCleanWroker defaultWorker].config = defaultSetting;
-    [[CCleanWroker defaultWorker] startClean];
-    
-    
+    [[CCleanWroker defaultWorker] startTimer];
+
     [CCAppMenu loadMenu];
 }
 
@@ -75,8 +71,5 @@
     [self.indicator stopAnimation:nil];
     [_theItem setImage:[NSImage imageNamed:@"statusbar_icon"]];
 }
-
-
-
 
 @end
