@@ -30,12 +30,10 @@ uint kCCWeedOutTimes[] = {7, 15, 30};
     
 }
 - (IBAction)clickCheckBtn:(NSButton *)sender {
-    NSLog(@"currnt check state = %d", (int)sender.state);
     CCleanWroker.defaultWorker.config.silencing = sender.state == NSOnState;
 }
 
 - (IBAction)selectWeedOutDays:(NSComboBox *)comboBox {
-    NSLog(@"select weedout time = %d", kCCWeedOutTimes[[comboBox indexOfSelectedItem]]);
     CCleanWroker.defaultWorker.config.cleanDay = kCCWeedOutTimes[comboBox.indexOfSelectedItem];
 }
 
@@ -70,7 +68,6 @@ uint kCCWeedOutTimes[] = {7, 15, 30};
     
     NSUInteger currentIndex = [set firstIndex];
     while (currentIndex != NSNotFound) {
-        NSLog(@"want delete row at index = %lu", (unsigned long)currentIndex);
         currentIndex = [set indexGreaterThanIndex:currentIndex];
     }
     
@@ -80,7 +77,7 @@ uint kCCWeedOutTimes[] = {7, 15, 30};
 
 - (IBAction)enterNewCleanDirPath:(NSTextField *)sender {
     if([CCUtils isVaildDirPath:sender.stringValue]){
-        NSLog(@"get a new water clean dirPath : %@",sender.stringValue);
+
         [CCleanWroker.defaultWorker.config.cleanDirPaths addObject:sender.stringValue];
         [self.cleanPathsTableView reloadData];
     }
