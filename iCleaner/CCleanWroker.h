@@ -16,6 +16,8 @@
 
 - (void)startClean;
 
+- (void)startTimer;
+
 - (void)weedoutIfNeed;
 
 @end

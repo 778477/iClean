@@ -58,14 +58,14 @@
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <scrollView misplaced="YES" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Na1-l5-7KP">
-                        <rect key="frame" x="73" y="76" width="240" height="135"/>
+                    <scrollView autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Na1-l5-7KP">
+                        <rect key="frame" x="74" y="77" width="239" height="134"/>
                         <clipView key="contentView" id="Mhc-lM-Log">
-                            <rect key="frame" x="1" y="0.0" width="238" height="134"/>
+                            <rect key="frame" x="1" y="0.0" width="237" height="133"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" alternatingRowBackgroundColors="YES" columnSelection="YES" autosaveColumns="NO" rowSizeStyle="automatic" headerView="mrO-ci-n2B" viewBased="YES" id="5yS-s8-606">
-                                    <rect key="frame" x="0.0" y="0.0" width="243" height="111"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="243" height="110"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <size key="intercellSpacing" width="3" height="2"/>
                                     <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -124,7 +124,7 @@
                             </subviews>
                         </clipView>
                         <scroller key="horizontalScroller" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="901-gK-pvk">
-                            <rect key="frame" x="1" y="118" width="238" height="16"/>
+                            <rect key="frame" x="1" y="117" width="237" height="16"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
                         <scroller key="verticalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="Ib9-qK-KYd">
@@ -137,7 +137,7 @@
                         </tableHeaderView>
                     </scrollView>
                     <textField verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yp7-HO-e0v">
-                        <rect key="frame" x="73" y="30" width="241" height="24"/>
+                        <rect key="frame" x="73" y="30" width="241" height="23"/>
                         <constraints>
                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="240" id="JD4-73-KHv"/>
                         </constraints>
@@ -180,23 +180,24 @@
                     </button>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="Na1-l5-7KP" firstAttribute="leading" secondItem="yp7-HO-e0v" secondAttribute="leading" id="0eq-2T-yp7"/>
-                    <constraint firstItem="Na1-l5-7KP" firstAttribute="centerX" secondItem="yp7-HO-e0v" secondAttribute="centerX" id="1Mx-su-ixR"/>
                     <constraint firstAttribute="trailing" secondItem="9L2-94-OpL" secondAttribute="trailing" constant="9" id="2Yj-F4-Rx2"/>
                     <constraint firstItem="JeB-bQ-4VA" firstAttribute="centerX" secondItem="jgt-RL-pna" secondAttribute="centerX" id="77N-Wj-EcH"/>
-                    <constraint firstItem="Na1-l5-7KP" firstAttribute="top" secondItem="JeB-bQ-4VA" secondAttribute="bottom" constant="9" id="Gwu-a0-Ssa"/>
+                    <constraint firstItem="yp7-HO-e0v" firstAttribute="top" secondItem="Na1-l5-7KP" secondAttribute="bottom" constant="24" id="Hvc-ah-jRm"/>
                     <constraint firstItem="yp7-HO-e0v" firstAttribute="leading" secondItem="se5-gp-TjO" secondAttribute="leading" constant="73" id="Km2-Rv-ciM"/>
                     <constraint firstItem="jgt-RL-pna" firstAttribute="top" secondItem="se5-gp-TjO" secondAttribute="top" constant="23" id="MUO-Fm-2OQ"/>
                     <constraint firstItem="9L2-94-OpL" firstAttribute="top" secondItem="se5-gp-TjO" secondAttribute="top" constant="258" id="Sfj-ig-Pnv"/>
-                    <constraint firstItem="yp7-HO-e0v" firstAttribute="top" secondItem="Na1-l5-7KP" secondAttribute="bottom" constant="23" id="WlD-a2-97K"/>
-                    <constraint firstItem="Na1-l5-7KP" firstAttribute="centerY" secondItem="se5-gp-TjO" secondAttribute="centerY" id="a6a-oW-BZ5"/>
+                    <constraint firstItem="Na1-l5-7KP" firstAttribute="centerY" secondItem="se5-gp-TjO" secondAttribute="centerY" id="XHd-VH-sMS"/>
                     <constraint firstAttribute="trailing" secondItem="ZPg-mI-vn3" secondAttribute="trailing" constant="20" id="dYo-N2-Vjs"/>
                     <constraint firstAttribute="bottom" secondItem="yp7-HO-e0v" secondAttribute="bottom" constant="30" id="efu-RQ-nLE"/>
+                    <constraint firstItem="Na1-l5-7KP" firstAttribute="leading" secondItem="se5-gp-TjO" secondAttribute="leading" constant="74" id="l1F-4g-G0d"/>
+                    <constraint firstAttribute="trailing" secondItem="Na1-l5-7KP" secondAttribute="trailing" constant="74" id="mw2-FT-w1h"/>
                     <constraint firstItem="JeB-bQ-4VA" firstAttribute="leading" secondItem="se5-gp-TjO" secondAttribute="leading" constant="24" id="oxQ-xZ-ggh"/>
                     <constraint firstItem="JeB-bQ-4VA" firstAttribute="top" secondItem="jgt-RL-pna" secondAttribute="bottom" constant="8" symbolic="YES" id="qMX-e7-7no"/>
                     <constraint firstAttribute="bottom" secondItem="9L2-94-OpL" secondAttribute="bottom" constant="9" id="tCf-xe-miJ"/>
                     <constraint firstItem="yp7-HO-e0v" firstAttribute="centerX" secondItem="se5-gp-TjO" secondAttribute="centerX" id="tGm-qE-pXA"/>
                     <constraint firstItem="ZPg-mI-vn3" firstAttribute="top" secondItem="se5-gp-TjO" secondAttribute="top" constant="51" id="tof-zp-TRM"/>
+                    <constraint firstItem="Na1-l5-7KP" firstAttribute="top" secondItem="JeB-bQ-4VA" secondAttribute="bottom" constant="9" id="tyI-03-mOf"/>
+                    <constraint firstItem="Na1-l5-7KP" firstAttribute="leading" secondItem="se5-gp-TjO" secondAttribute="leading" constant="74" id="xMR-p8-87x"/>
                 </constraints>
             </view>
             <connections>
