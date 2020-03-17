@@ -12,7 +12,7 @@
 
 ```
 ~/Library/Developer/Xcode/DerivedData
-~/Library/Caches/AndroidStudioPreview2.2
+~/Library/Caches
 ```
 
 
