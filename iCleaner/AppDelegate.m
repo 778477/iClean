@@ -21,7 +21,7 @@
 @end
 
 @implementation AppDelegate
-
+@synthesize isWorking = _isWorking;
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     NSStatusBar *bar = [NSStatusBar systemStatusBar];
     _theItem = [bar statusItemWithLength:bar.thickness];
@@ -61,12 +61,23 @@
 
 
 #pragma mark - CleanAppDelegate
-- (void)cleaning{
+- (void)cleaning {
+    if (self.isWorking) {
+        return ;
+    }
+    
+    self.isWorking = YES;
+    
     [_theItem setView:self.indicator];
     [self.indicator startAnimation:nil];
 }
 
 - (void)finish{
+    if (!self.isWorking) {
+        return ;
+    }
+    
+    self.isWorking = NO;
     [_theItem setView:nil];
     [self.indicator stopAnimation:nil];
     [_theItem setImage:[NSImage imageNamed:@"statusbar_icon"]];

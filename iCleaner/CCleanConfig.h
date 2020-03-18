@@ -16,6 +16,8 @@ static NSString *const kCCleanNotificationAction = @"kCCleanNotificationAction";
 
 @protocol CleanAppDelegate <NSObject>
 
+@property (nonatomic, assign) BOOL isWorking;
+
 - (void)cleaning;
 
 - (void)finish;

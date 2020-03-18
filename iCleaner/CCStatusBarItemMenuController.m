@@ -49,7 +49,8 @@
 
 #pragma mark - MenuItem Action
 - (void)clickCleanItem{
-    [[CCleanWroker defaultWorker] startClean];
+    
+    [[CCleanWroker defaultWorker] startCleanFromTimer:NO];
 }
 
 - (void)clickSettingItem{

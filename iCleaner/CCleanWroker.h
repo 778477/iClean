@@ -10,13 +10,13 @@
 #import "CCleanConfig.h"
 
 @interface CCleanWroker : NSObject
-@property (nonatomic, strong) id<CleanConfig> config;
+@property (nonatomic, strong) id<CleanConfig> _Nullable config;
 
-+ (instancetype)defaultWorker;
-
-- (void)startClean;
++ (instancetype _Nullable)defaultWorker;
 
 - (void)startTimer;
+
+- (void)startCleanFromTimer:(BOOL)fromTimer;
 
 - (void)weedoutIfNeed;
 

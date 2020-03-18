@@ -37,10 +37,6 @@ const uint32_t kCleanWokerTimerTotal = 60 * kCleanWokerTimerOnce; // 1 hour
     self = [super init];
     if(self){
         [NSUserNotificationCenter defaultUserNotificationCenter].delegate = self;
-        [[NSNotificationCenter defaultCenter] addObserver:self
-                                                 selector:@selector(startCleanIfNeed)
-                                                     name:kCCStartCleanNotification
-                                                   object:nil];
     }
     return self;
 }
@@ -66,7 +62,7 @@ const uint32_t kCleanWokerTimerTotal = 60 * kCleanWokerTimerOnce; // 1 hour
                 self->_timerInterval += kCleanWokerTimerOnce;
                 if(self->_timerInterval > kCleanWokerTimerTotal){
                     self->_timerInterval = 0;
-                    [self startCleanIfNeed];
+                    [self startCleanFromTimer:YES];
                 }
             });
         }
@@ -84,19 +80,23 @@ const uint32_t kCleanWokerTimerTotal = 60 * kCleanWokerTimerOnce; // 1 hour
     if(!_timer){
         [self resumeTimer];
     }
-    [self startCleanIfNeed];
+    [self startCleanFromTimer:YES];
 }
 
 
-- (void)startCleanIfNeed{
-    if(![_config needWeedout]){
+- (void)startCleanFromTimer:(BOOL)fromTimer{
+    if (fromTimer && ![_config needWeedout]) {
         return ;
     }
     
-    [self startClean];
+    id<CleanAppDelegate> delagete = (id<CleanAppDelegate>)[NSApplication sharedApplication].delegate;
+    [delagete cleaning];
+    [self startSweepsFileTargetsCompletion:^{
+        [delagete finish];
+    }];
 }
 
-- (void)weedoutIfNeed{
+- (void)weedoutIfNeed {
     dispatch_async(self.queue, ^{
         uint64_t cleanedConentSize = 0;
         NSFileManager *fileManaager = [NSFileManager defaultManager];
@@ -106,15 +106,14 @@ const uint32_t kCleanWokerTimerTotal = 60 * kCleanWokerTimerOnce; // 1 hour
             }
         }
         
-        id<CleanAppDelegate> delagete = (id<CleanAppDelegate>)[NSApplication sharedApplication].delegate;
         dispatch_async(dispatch_get_main_queue(), ^{
-            
             NSString *log = [NSString stringWithFormat:@"已清理大约 %@ 磁盘空间",[CCUtils dirFormatsize:cleanedConentSize]];
             NSUserNotification *notif = [[NSUserNotification alloc] init];
             notif.title = @"iCleaner";
             notif.informativeText = log;
             [[NSUserNotificationCenter defaultUserNotificationCenter] deliverNotification:notif];
             
+            id<CleanAppDelegate> delagete = (id<CleanAppDelegate>)[NSApplication sharedApplication].delegate;
             [delagete finish];
         });
     });
@@ -122,7 +121,7 @@ const uint32_t kCleanWokerTimerTotal = 60 * kCleanWokerTimerOnce; // 1 hour
 
 #pragma mark - private
 
-- (void)startClean{
+- (void)startSweepsFileTargetsCompletion:(dispatch_block_t)completion {
     // do the job
     dispatch_async(self.queue, ^{
         
@@ -166,6 +165,10 @@ const uint32_t kCleanWokerTimerTotal = 60 * kCleanWokerTimerOnce; // 1 hour
                 [[NSUserNotificationCenter defaultUserNotificationCenter] deliverNotification:notif];
             });
             
+            if (completion) {
+                completion();
+            }
+            
             return ;
         }
         
@@ -180,6 +183,10 @@ const uint32_t kCleanWokerTimerTotal = 60 * kCleanWokerTimerOnce; // 1 hour
                 notif.informativeText = [NSString stringWithFormat:@"已扫描出目标文件夹大约有 %@ 大小待清理",[CCUtils dirFormatsize:needWeedOutConentSize]];
                 [[NSUserNotificationCenter defaultUserNotificationCenter] deliverNotification:notif];
             });
+            
+            if (completion) {
+                completion();
+            }
         }
         
     });
